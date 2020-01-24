@@ -10,7 +10,7 @@ The memo series title has two implications. The first is that this memo series c
 0. [LightWork Memo 000](/memos/LightWorkMemo000-r3.pdf)  Memo inviting contributions, and providing guidelines, to the LightWork Memo Series
       * Glen Langston, 2017 August 11, Status: Active
       * Initial memo in the series inviting others to contribute to the topic of Citizen Science with Radio Telescopes
-1. [LightWork Memo 001](/memos/LightWorkMemo001-r1.pdf)  First System temperature Measurements with a horn antenna.
+1. [LightWork Memo 001](/memos/LightWorkMemo001-01.pdf)  First System temperature Measurements with a horn antenna.
 2. [LightWork Memo 002](/memos/LightWorkMemo002-r2.pdf)  Report on system temperature after a number of modifications.
 3. [LightWork Memo 003](/memos/LightWorkMemo003-r2.pdf) Measurements of system gain as a function of feed probe placement.
 4. [LightWork Memo 004](/memos/LightWorkMemo004-r3.pdf)  Full system description of first working horn antenna.
