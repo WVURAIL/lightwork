@@ -14,13 +14,19 @@ The memo series title has two implications. The first is that this memo series c
 2. [LightWork Memo 002](/memos/LightWorkMemo002-r2.pdf)  Report on system temperature after a number of modifications.
 3. [LightWork Memo 003](/memos/LightWorkMemo003-r2.pdf) Measurements of system gain as a function of feed probe placement.
 4. [LightWork Memo 004](/memos/LightWorkMemo004-r3.pdf)  Full system description of first working horn antenna.
+5.
 6. [LightWork Memo 006](/memos/LightWorkMemo006-r6.pdf) Sketch of amplifier board design for Citizen Science Radio Telescopes
+7.
 8. [LightWork Memo 008](/memos/LightWorkMemo008-r1.pdf) Measurements of performance of amplifier system using low cost LNA4ALL amplifiers.
 9. [LightWork Memo 009](/memos/LightWorkMemo009-r3.pdf)  Measurements of performance of amplifier system using ZX60-P103LN+ amplifiers
 10. [LightWork Memo 010](/memos/LightWorkMemo010-4.pdf)  Measurements with aluminum foam board horn and improved infrastructure
+11.
+12.
+13.
 14. [LightWork Memo 014](/memos/LightWorkMemo014r9.pdf) Galactic Mapping with Horn and Amplifier box
 15. [LightWork Memo 015](/memos/LightWorkMemo015-2.pdf) Science Aficionados Amplifier Box B
 16. [LightWork Memo 016](/memos/LightWorkMemo016-1.pdf) Commercial Parts list for Amplifier Box B
+17.
 18. [LightWork Memo 018](/memos/LightWorkMemo018-r1.pdf) Galactic Spectra Data Overview
 19. [LightWork Memo 019](/memos/LightWorkMemo019-r1.pdf) Mapping the Milky Way
 20. [LightWork Memo 020](/memos/LightWorkMemo020-r3.pdf) Radio Astronomy With Gnuradio-Companion
