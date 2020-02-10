@@ -31,4 +31,4 @@ The memo series title has two implications. The first is that this memo series c
 19. [LightWork Memo 019](/memos/LightWorkMemo019-r1.pdf) Mapping the Milky Way
 20. [LightWork Memo 020](/memos/LightWorkMemo020-r3.pdf) Radio Astronomy With Gnuradio-Companion
 21. [LightWork Memo 021](/memos/LightWorkMemo021-r6.pdf) Horn Telescope Base Construction Guide
-22. [LightWork Memo 022](/memos/LightWorkMemo022-r1.pdf) Horn Telescope Construction Guide
+22. [LightWork Memo 022](/memos/LightWorkMemo022-r13.pdf) Horn Telescope Construction Guide
