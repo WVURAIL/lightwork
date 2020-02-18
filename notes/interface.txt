@@ -1,0 +1,25 @@
+Topic:  ODROID network configuration
+From: Glen Langston
+Date: 2020 February 18
+
+The network configuration for the ODROID N2 is set using file:
+
+/etc/network/interfaces
+
+file
+
+For updating the code on the web do the following:
+
+sudo su
+cd /etc/network
+
+cp interfaces.dynamic interfaces
+
+shutdown -r now
+
+For static IP address 192.168.1.208
+
+cp interfaces.208 interfaces
+
+shutdown -r now
+
