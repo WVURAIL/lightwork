@@ -1,0 +1,10 @@
+# interfaces(5) file used by ifup(8) and ifdown(8)
+auto lo
+iface lo inet static
+
+auto eth0
+iface eth0 inet static
+address 192.168.1.208
+netmask 255.255.255.0
+getway 192.168.1.1
+
