@@ -32,3 +32,11 @@ The memo series title has two implications. The first is that this memo series c
 20. [LightWork Memo 020](/memos/LightWorkMemo020-r3.pdf) Radio Astronomy With Gnuradio-Companion
 21. [LightWork Memo 021](/memos/LightWorkMemo021-r6.pdf) Horn Telescope Base Construction Guide
 22. [LightWork Memo 022](/memos/LightWorkMemo022-r13.pdf) Horn Telescope Construction Guide
+23.
+24.
+25.
+26.
+27
+28. [LightWork Memo 028](/memos/LightWorkMemo028-r7-NoiseTemp.pdf) Measure Noise Temperature of First LNA
+29. [LightWork Memo 029](/memos/LightWorkMemo029-r1-HydrogenLineProject.pdf) Complete Overview of Construction and Use of a Radio Telescope
+
