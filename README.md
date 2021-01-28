@@ -36,7 +36,8 @@ The memo series title has two implications. The first is that this memo series c
 24.
 25.
 26.
-27
+27.
 28. [LightWork Memo 028](/memos/LightWorkMemo028-r7-NoiseTemp.pdf) Measure Noise Temperature of First LNA
-29. [LightWork Memo 029](/memos/LightWorkMemo029-r1-HydrogenLineProject.pdf) Complete Overview of Construction and Use of a Radio Telescope
+29. [LightWork Memo 029](/memos/LightWorkMemo029-r2-HydrogenLineProject.pdf)Overview of Construction and Use of Radio Telescope
+
 
