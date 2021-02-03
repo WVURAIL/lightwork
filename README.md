@@ -32,11 +32,11 @@ The memo series title has two implications. The first is that this memo series c
 20. [LightWork Memo 020](/memos/LightWorkMemo020-r3.pdf) Radio Astronomy With Gnuradio-Companion
 21. [LightWork Memo 021](/memos/LightWorkMemo021-r6.pdf) Horn Telescope Base Construction Guide
 22. [LightWork Memo 022](/memos/LightWorkMemo022-r13.pdf) Horn Telescope Construction Guide
-23. [LightWork Memo 023](/memos/LightWorkMemo023-r2-EventCapture.pdf) Event Capture with ADALM Pluto - under construction
-24. [LightWork Memo 024](/memos/LightWorkMemo024-r2-Armed.pdf) Milky Way Galaxy Armed and Dangerous - under construction
+23. [LightWork Memo 023](/memos/LightWorkMemo023-r2-EventCapture.pdf) Event Capture with ADALM Pluto - _under construction_
+24. [LightWork Memo 024](/memos/LightWorkMemo024-r2-Armed.pdf) Milky Way Galaxy Armed and Dangerous - _under construction_
 25. [LightWork Memo 025](/memos/LightWorkMemo025-r5-DetectingPulsars.pdf) Sensitivy of Horn Radio Telescopes for Detecting Pulsars.
-26. [LightWork Memo 026](/memos/LightWorkMemo026-r2-Armed.pdf) Calibration and Imaging Steps - under construction
-27. [LightWork Memo 027](/memos/LightWorkMemo027-r2-4HornEvents.pdf) Event Detection with 4 Horns - under construction
+26. [LightWork Memo 026](/memos/LightWorkMemo026-r2-CalibrateMaps.pdf) Calibration and Imaging Steps - _under construction_
+27. [LightWork Memo 027](/memos/LightWorkMemo027-r2-4HornEvents.pdf) Event Detection with 4 Horns - _under construction_
 28. [LightWork Memo 028](/memos/LightWorkMemo028-r7-NoiseTemp.pdf) Measure Noise Temperature of First LNA
 29. [LightWork Memo 029](/memos/LightWorkMemo029-r2-HydrogenLineProject.pdf) Overview of Construction and Use of Radio Telescope
 
