@@ -38,5 +38,7 @@ The memo series title has two implications. The first is that this memo series c
 26. [LightWork Memo 026](/memos/LightWorkMemo026-r2-CalibrateMaps.pdf) Calibration and Imaging Steps - _under construction_
 27. [LightWork Memo 027](/memos/LightWorkMemo027-r2-4HornEvents.pdf) Event Detection with 4 Horns - _under construction_
 28. [LightWork Memo 028](/memos/LightWorkMemo028-r7-NoiseTemp.pdf) Measure Noise Temperature of First LNA
-29. [LightWork Memo 029](/memos/LightWorkMemo029-r2-HydrogenLineProject.pdf) Overview of Construction and Use of Radio Telescope <span style='font-size:30px;'>&#128079;</span>
+29. [LightWork Memo 029](/memos/LightWorkMemo029-r2-HydrogenLineProject.pdf) Overview of Construction and Use of Radio Telescope <span style='font-size:50px;'>&#128079;</span>
+
+_Note that some larger PDFs must be downloaded for viewing.  Github is not immediately displaying all files._
 
