@@ -43,3 +43,8 @@ The memo series title has two implications. The first is that this memo series c
 
 _Note that some larger PDFs must be downloaded for viewing.  Github is not immediately displaying all files._
 
+# Lightwork Videos Series
+We've added a few videos that illustrate parts of the memos.
+1. [Intro][https://www.youtube.com/watch?v=4g7KqXHw6wc]
+2. [Telescope Calibrated][https://www.youtube.com/watch?v=qXBN_0yWl-o&t=13s]
+3. [Gnu Radio First Steps][https://www.youtube.com/watch?v=UmjVbE0Jj0M]
