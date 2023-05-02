@@ -41,6 +41,7 @@ The memo series title has two implications. The first is that this memo series c
 29. [LightWork Memo 029](/memos/LightWorkMemo029-r2-HydrogenLineProject.pdf) Overview of Construction and Use of Radio Telescope <span style='font-size:50px;'>&#128079;</span>
 30. [LightWork Memo 030](/memos/LightWork0030-r1-ATaleOfThreeLNAs.pdf) A Tale of Three DSPIRA LNAs.  Successful construction and analysis of three very high sensitivity versions of the WVURAIL LNAs for Radio Astronomy<span style='font-size:50px;'>&#128079;</span>
 31. [LightWork Memo 031](/memos/LightWorkMemo031.pdf) Additive Interferometry with 2 Horn Telescopes
+32. [LightWork memo 032](/memos/LightWorkMemo32PailOfMilkyWay-r5.pdf) Gather a Pail of Milky Way.  Construction guide for a very small, very sensitive horn radio telescope.
 
 _Note that some larger PDFs must be downloaded for viewing.  Github is not immediately displaying all files._
 
