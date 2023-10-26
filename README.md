@@ -50,3 +50,7 @@ We've added a few videos that illustrate parts of the memos.
 1. [Intro][https://www.youtube.com/watch?v=4g7KqXHw6wc]
 2. [Telescope Calibrated][https://www.youtube.com/watch?v=qXBN_0yWl-o&t=13s]
 3. [Gnu Radio First Steps][https://www.youtube.com/watch?v=UmjVbE0Jj0M]
+
+# Elevation axis templates and important notes
+The notes file contains a [pdf][/notes/ElAxisCm.pdf] used for building your horn telescope elevation axis. 
+<a <img="/notes/ElAxisCm.png" width=20%> Elevation Axis Template</a> 
