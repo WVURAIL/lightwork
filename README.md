@@ -52,5 +52,5 @@ We've added a few videos that illustrate parts of the memos.
 3. [Gnu Radio First Steps][https://www.youtube.com/watch?v=UmjVbE0Jj0M]
 
 # Elevation axis templates and important notes
-The notes file contains a [pdf][/notes/ElAxisCm.pdf] used for building your horn telescope elevation axis. 
-<a <img="/notes/ElAxisCm.png" width=20%> Elevation Axis Template</a> 
+The notes directory contains some hints for Raspberry Pi computers and a template for building your horn telescope elevation axis. <a href="https:notes/ElAxisCm.pdf"> <img src="notes/ElAxisCm.png" width=200 
+alt="Elevation Axis Template" align="right"></a>
