@@ -56,8 +56,8 @@ We've added a few videos that illustrate parts of the memos.
 3. [Gnu Radio First Steps][https://www.youtube.com/watch?v=UmjVbE0Jj0M]
 4. [Green Bank Observatory 2024 Summer Students build a horn Radio Telescope][
 https://youtube.com/playlist?list=PLFMYhHhJW1VDIm3JLKJYwAia_89thyLB9&si=0gA808pXB9bRU9rw]
-# Elevation Axis Template <a href="https:notes/ElAxisCm.pdf"> <img src="notes/ElAxisCm.png" width=200 alt="Elevation Axis Template" align="right"></a>
+# Elevation Axis Template <a href="notes/ElAxisCm.pdf"> <img src="notes/ElAxisCm.png" width=200 alt="Elevation Axis Template" align="right"></a>
 The <a href="notes"> notes directory </a> contains some hints for Raspberry Pi computers and a template for building your horn telescope elevation axis. The telescope base includes a protractor for setting the angle of observations easily.   The side of the base is more easily constructed by taping the elevation template to the board to be cut.   Then drill holes through the marked locations.  
-# Elevation Mount Template <a href="https:notes/ElMountTemplate.pdf"> <img src="notes/ElMountTemplate.png" width=200 alt="Elevation Mount Template" align="right"></a>
+# Elevation Mount Template <a href="notes/ElMountTemplate.pdf"> <img src="notes/ElMountTemplate.png" width=200 alt="Elevation Mount Template" align="right"></a>
 The cone-horn radio telescope design includes a wooden elevation mount.  The mount is made from four wooden parts.  The front and back are cut from a 10-inch wide 8-inch tall board, 0.75-inches thick. 
 The sides are two 14-inch long balusters.  To simplify construction, print out the template and trace onto the boards. 
