@@ -52,9 +52,9 @@ _Note that some larger PDFs must be downloaded for viewing.  Github is not immed
 # Lightwork Videos Series
 We've added a few videos that illustrate parts of the memos.
 1. [Intro][<a href="https://www.youtube.com/watch?v=4g7KqXHw6wc"> Glen Langston - Galactic Perspective </a>]
-2. [Telescope Calibrated][<a href="https://www.youtube.com/watch?v=qXBN_0yWl-o&t=13s"> Steps for Making sense of your observations </a>]
+2. [Telescope Calibrated][<a href="https://www.youtube.com/watch?v=qXBN_0yWl-o&t=13s"> See a radio Telecope discover the arms of the Milky Way</a>]
 3. [Gnu Radio First Steps][<a href="https://www.youtube.com/watch?v=UmjVbE0Jj0M"> Sophie and Evan Introduce gnuradio </a> ]
-4. [Green Bank Observatory 2024 Summer Students build a horn Radio Telescope][<a href="https://youtube.com/playlist?list=PLFMYhHhJW1VDIm3JLKJYwAia_89thyLB9&si=0gA808pXB9bRU9rw> Complete Horn Telescope build Video</a>]
+4. [Green Bank Observatory 2024 Summer Students][<a href="https://youtube.com/playlist?list=PLFMYhHhJW1VDIm3JLKJYwAia_89thyLB9&si=0gA808pXB9bRU9rw"> Build a Horn Radio Telescope</a>]
    <br>
 # Elevation Axis Template <a href="notes/ElAxisCm.pdf"> <img src="notes/ElAxisCm.png" width=200 alt="Elevation Axis Template" align="right"></a>
 The <a href="notes"> notes directory </a> contains some hints for Raspberry Pi computers and a template for building your horn telescope elevation axis. The telescope base includes a protractor for setting the angle of observations easily.   The side of the base is more easily constructed by taping the elevation template to the board to be cut.   Then drill holes through the marked locations.  
