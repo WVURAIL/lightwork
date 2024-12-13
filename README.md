@@ -51,9 +51,9 @@ _Note that some larger PDFs must be downloaded for viewing.  Github is not immed
 
 # Lightwork Videos Series
 We've added a few videos that illustrate parts of the memos.
-1. [Intro][<a href="https://www.youtube.com/watch?v=4g7KqXHw6wc"> Intro toe Gnuradio</a>]
+1. [Intro][<a href="https://www.youtube.com/watch?v=4g7KqXHw6wc"> Glen Langston - Galactic Perspective </a>]
 2. [Telescope Calibrated][https://www.youtube.com/watch?v=qXBN_0yWl-o&t=13s]
-3. [Gnu Radio First Steps][https://www.youtube.com/watch?v=UmjVbE0Jj0M]
+3. [Gnu Radio First Steps][<a href="https://www.youtube.com/watch?v=UmjVbE0Jj0M"> Sophie and Evan Introduce gnuradio </a> ]
 4. [Green Bank Observatory 2024 Summer Students build a horn Radio Telescope][
 https://youtube.com/playlist?list=PLFMYhHhJW1VDIm3JLKJYwAia_89thyLB9&si=0gA808pXB9bRU9rw]
 # Elevation Axis Template <a href="notes/ElAxisCm.pdf"> <img src="notes/ElAxisCm.png" width=200 alt="Elevation Axis Template" align="right"></a>
