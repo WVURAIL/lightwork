@@ -42,7 +42,7 @@ The memo series title has two implications. The first is that this memo series c
 30. [LightWork Memo 030](/memos/LightWork0030-r1-ATaleOfThreeLNAs.pdf) A Tale of Three DSPIRA LNAs.  Successful construction and analysis of three very high sensitivity versions of the WVURAIL LNAs for Radio Astronomy
 31. [LightWork Memo 031](/memos/LightWorkMemo031.pdf) Additive Interferometry with 2 Horn Telescopes
 32. [LightWork memo 032](/memos/LightWorkMemo032-PailOfMilkyWay-r5.pdf) Gather a Pail of Milky Way.  Construction guide for a very small, very sensitive horn radio telescope.
-33. [LightWork memo 033](/memos/) Under construction
+33. [LightWork memo 033](<a href=https://arxiv.org/pdf/2411.00057"> Jack Phelps, </a>)) High School student, presents a remarkably clear description of their Radio Telescope and Observations.
 34. [LightWork memo 034](/memos/LightWorkMemo034-SimpleBase-r5.pdf) Guide to Building a Horn Telescope Base. Construction guide for easily pointing a horn radio telescope.
 35. [LightWork memo 035](/memos/LightWorkMemo035-ConeHorn-r5.pdf) Guide to Building a Cone Horn Telescope. Construction guide for an even simpler and more sensitive Radio Telescope. <span style='font-size:50px;'>&#128079;</span>
 37. [LightWork memo 036](/memos/LightWorkMemo036-ConeHornBase-r1.pdf) Updated Telescope base, construction simpler and work with Cone Horn.
