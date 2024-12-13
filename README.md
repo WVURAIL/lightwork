@@ -38,24 +38,24 @@ The memo series title has two implications. The first is that this memo series c
 26. [LightWork Memo 026](/memos/LightWorkMemo026-r2-CalibrateMaps.pdf) Calibration and Imaging Steps - _under construction_
 27. [LightWork Memo 027](/memos/LightWorkMemo027-r2-4HornEvents.pdf) Event Detection with 4 Horns - _under construction_
 28. [LightWork Memo 028](/memos/LightWorkMemo028-r7-NoiseTemp.pdf) Measure Noise Temperature of First LNA
-29. [LightWork Memo 029](/memos/LightWorkMemo029-r2-HydrogenLineProject.pdf) Overview of Construction and Use of Radio Telescope <span style='font-size:50px;'>&#128079;</span>
-30. [LightWork Memo 030](/memos/LightWork0030-r1-ATaleOfThreeLNAs.pdf) A Tale of Three DSPIRA LNAs.  Successful construction and analysis of three very high sensitivity versions of the WVURAIL LNAs for Radio Astronomy<span style='font-size:50px;'>&#128079;</span>
+29. [LightWork Memo 029](/memos/LightWorkMemo029-r2-HydrogenLineProject.pdf) Overview of Construction and Use of Radio Telescope
+30. [LightWork Memo 030](/memos/LightWork0030-r1-ATaleOfThreeLNAs.pdf) A Tale of Three DSPIRA LNAs.  Successful construction and analysis of three very high sensitivity versions of the WVURAIL LNAs for Radio Astronomy
 31. [LightWork Memo 031](/memos/LightWorkMemo031.pdf) Additive Interferometry with 2 Horn Telescopes
 32. [LightWork memo 032](/memos/LightWorkMemo032-PailOfMilkyWay-r5.pdf) Gather a Pail of Milky Way.  Construction guide for a very small, very sensitive horn radio telescope.
 33. [LightWork memo 033](/memos/) Under construction
 34. [LightWork memo 034](/memos/LightWorkMemo034-SimpleBase-r5.pdf) Guide to Building a Horn Telescope Base. Construction guide for easily pointing a horn radio telescope.
-35. [LightWork memo 035](/memos/LightWorkMemo035-ConeHorn-r5.pdf) Guide to Building a Cone Horn Telescope. Construction guide for an even simpler and more sensitive Radio Telescope.
-36. [LightWork memo 036](/memos/LightWorkMemo036-ConeHornBase-r1.pdf) Updated Telescope base, construction simpler and work with Cone Horn.
-37. [LightWork memo 037](/memos/LightWorkMemo037-PointingOffsets-r1.pdf) Technique for finding pointing offsets based on 24 hours of observations.
+35. [LightWork memo 035](/memos/LightWorkMemo035-ConeHorn-r5.pdf) Guide to Building a Cone Horn Telescope. Construction guide for an even simpler and more sensitive Radio Telescope. <span style='font-size:50px;'>&#128079;</span>
+37. [LightWork memo 036](/memos/LightWorkMemo036-ConeHornBase-r1.pdf) Updated Telescope base, construction simpler and work with Cone Horn.
+38. [LightWork memo 037](/memos/LightWorkMemo037-PointingOffsets-r1.pdf) Technique for finding pointing offsets based on 24 hours of observations.
 _Note that some larger PDFs must be downloaded for viewing.  Github is not immediately displaying all files._
 
 # Lightwork Videos Series
 We've added a few videos that illustrate parts of the memos.
 1. [Intro][<a href="https://www.youtube.com/watch?v=4g7KqXHw6wc"> Glen Langston - Galactic Perspective </a>]
-2. [Telescope Calibrated][https://www.youtube.com/watch?v=qXBN_0yWl-o&t=13s]
+2. [Telescope Calibrated][<a href="https://www.youtube.com/watch?v=qXBN_0yWl-o&t=13s"> Steps for Making sense of your observations </a>]
 3. [Gnu Radio First Steps][<a href="https://www.youtube.com/watch?v=UmjVbE0Jj0M"> Sophie and Evan Introduce gnuradio </a> ]
-4. [Green Bank Observatory 2024 Summer Students build a horn Radio Telescope][
-https://youtube.com/playlist?list=PLFMYhHhJW1VDIm3JLKJYwAia_89thyLB9&si=0gA808pXB9bRU9rw]
+4. [Green Bank Observatory 2024 Summer Students build a horn Radio Telescope][<a href="https://youtube.com/playlist?list=PLFMYhHhJW1VDIm3JLKJYwAia_89thyLB9&si=0gA808pXB9bRU9rw> Complete Horn Telescope build Video</a>]
+   <br>
 # Elevation Axis Template <a href="notes/ElAxisCm.pdf"> <img src="notes/ElAxisCm.png" width=200 alt="Elevation Axis Template" align="right"></a>
 The <a href="notes"> notes directory </a> contains some hints for Raspberry Pi computers and a template for building your horn telescope elevation axis. The telescope base includes a protractor for setting the angle of observations easily.   The side of the base is more easily constructed by taping the elevation template to the board to be cut.   Then drill holes through the marked locations.  
 # Elevation Mount Template <a href="notes/ElMountTemplate.pdf"> <img src="notes/ElMountTemplate.png" width=200 alt="Elevation Mount Template" align="right"></a>
