@@ -44,14 +44,14 @@ The memo series title has two implications. The first is that this memo series c
 32. [LightWork memo 032](/memos/LightWorkMemo032-PailOfMilkyWay-r5.pdf) Gather a Pail of Milky Way.  Construction guide for a very small, very sensitive horn radio telescope.
 33. [LightWork memo 033](/memos/) Under construction
 34. [LightWork memo 034](/memos/LightWorkMemo034-SimpleBase-r5.pdf) Guide to Building a Horn Telescope Base. Construction guide for easily pointing a horn radio telescope.
-35. [LightWork memo 035](/memos/LightWorkMemo035-ConeHorn-r4.pdf) Guide to Building a Cone Horn Telescope. Construction guide for an even simpler and more sensitive Radio Telescope.
+35. [LightWork memo 035](/memos/LightWorkMemo035-ConeHorn-r5.pdf) Guide to Building a Cone Horn Telescope. Construction guide for an even simpler and more sensitive Radio Telescope.
 36. [LightWork memo 036](/memos/LightWorkMemo036-ConeHornBase-r1.pdf) Updated Telescope base, construction simpler and work with Cone Horn.
 37. [LightWork memo 037](/memos/LightWorkMemo037-PointingOffsets-r1.pdf) Technique for finding pointing offsets based on 24 hours of observations.
 _Note that some larger PDFs must be downloaded for viewing.  Github is not immediately displaying all files._
 
 # Lightwork Videos Series
 We've added a few videos that illustrate parts of the memos.
-1. [Intro][https://www.youtube.com/watch?v=4g7KqXHw6wc]
+1. [Intro][<a href="https://www.youtube.com/watch?v=4g7KqXHw6wc"> Intro toe Gnuradio</a>]
 2. [Telescope Calibrated][https://www.youtube.com/watch?v=qXBN_0yWl-o&t=13s]
 3. [Gnu Radio First Steps][https://www.youtube.com/watch?v=UmjVbE0Jj0M]
 4. [Green Bank Observatory 2024 Summer Students build a horn Radio Telescope][
