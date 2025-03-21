@@ -44,7 +44,7 @@ The memo series title has two implications. The first is that this memo series c
 32. [LightWork memo 032](/memos/LightWorkMemo032-PailOfMilkyWay-r5.pdf) Gather a Pail of Milky Way.  Construction guide for a very small, very sensitive horn radio telescope.
 33. [LightWork memo 033](https://arxiv.org/pdf/2411.00057) Jack Phelps, High School Student, presents a remarkably clear description of their Radio Telescope and Observations. <span style='font-size:50px;'>&#128079;</span>
 34. [LightWork memo 034](/memos/LightWorkMemo034-SimpleBase-r5.pdf) Guide to Building a Pail-Of-Milky-Way Telescope Base. Construction guide for easily pointing a horn radio telescope.   This memo is superceeded by Memo 36.
-35. [LightWork memo 035](/memos/LightWorkMemo035-ConeHorn-r5.pdf) Guide to Building a Cone Horn Telescope. Construction guide for an even simpler and more sensitive Radio Telescope. <span style='font-size:50px;'>&#128079;</span>
+35. [LightWork memo 035](/memos/LightWorkMemo035-ConeHorn-r6.pdf) Guide to Building a Cone Horn Telescope. Construction guide for an even simpler and more sensitive Radio Telescope. <span style='font-size:50px;'>&#128079;</span>
 36. [LightWork memo 036](/memos/LightWorkMemo036-ConeHornBase-r7.pdf) Updated Telescope base, construction simpler and work with Cone Horn.  This memo superceeds memo 34. <span style='font-size:50px;'>&#128079;</span>
 37. [LightWork memo 037](/memos/LightWorkMemo037-PointingOffsets-r1.pdf) Technique for finding pointing offsets based on 24 hours of observations.
 _Note that some larger PDFs must be downloaded for viewing.  Github is not immediately displaying all files._
@@ -55,7 +55,8 @@ We've added a few videos that illustrate parts of the memos.
 2. [Telescope Calibrated][<a href="https://www.youtube.com/watch?v=qXBN_0yWl-o&t=13s"> See a radio Telecope discover the arms of the Milky Way</a>]
 3. [Gnu Radio First Steps][<a href="https://www.youtube.com/watch?v=UmjVbE0Jj0M"> Sophie and Evan Introduce gnuradio </a> ]
 4. [Green Bank Observatory 2024 Summer Students][<a href="https://youtube.com/playlist?list=PLFMYhHhJW1VDIm3JLKJYwAia_89thyLB9&si=0gA808pXB9bRU9rw"> Build a Horn Radio Telescope</a>]
-   <br>
+5. [Testing your Amplifier before Observations][<a href="https://youtu.be/ErXdthZFUjY"> Test Amplifier and software setup </a>
+<br>
 # Elevation Axis Template <a href="notes/ElAxisCm.pdf"> <img src="notes/ElAxisCm.png" width=200 alt="Elevation Axis Template" align="right"></a>
 The <a href="notes"> notes directory </a> contains some hints for Raspberry Pi computers and a template for building your horn telescope elevation axis. The telescope base includes a protractor for setting the angle of observations easily.   The side of the base is more easily constructed by taping the elevation template to the board to be cut.   Then drill holes through the marked locations.  
 # Elevation Mount Template <a href="notes/ElMountTemplate.pdf"> <img src="notes/ElMountTemplate.png" width=200 alt="Elevation Mount Template" align="right"></a>
