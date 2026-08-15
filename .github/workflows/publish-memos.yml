@@ -1,0 +1,47 @@
+name: Compile Memos and Publish to Pages
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX Memos to PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: "*.tex"
+          continue_on_error: true
+
+      - name: Prepare Pages Artifacts
+        run: |
+          mkdir -p public/pdfs
+          cp -r *.pdf public/pdfs/ 2>/dev/null || true
+          
+          if [ ! -f public/index.html ]; then
+            echo "<html><head><title>WVURAIL Technical Memos</title></head><body>" > public/index.html
+            echo "<h1>WVURAIL Technical Memos</h1><ul>" >> public/index.html
+            for f in public/pdfs/*.pdf; do
+              filename=$(basename "$f")
+              echo "<li><a href='pdfs/$filename'>$filename</a></li>" >> public/index.html
+            done
+            echo "</ul></body></html>" >> public/index.html
+          fi
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
