@@ -1,0 +1,160 @@
+# Publishes this repository to https://wvurail.org/lightwork/
+#
+# What this used to do, and why it was wrong: the "Prepare Pages Artifacts"
+# step ran
+#
+#     cp -r *.pdf public/pdfs/
+#
+# which copies PDFs in the repository ROOT and nothing else. There are three.
+# The thirty-six memos in memos/ were never copied. It then wrote its own bare
+# index.html listing whatever it had managed to copy, and deployed only that
+# folder - so the published site was three filenames with no descriptions, and
+# README.md, the real index of thirty-one memos, was never rendered at all.
+#
+# This builds the repository with Jekyll instead, the same way GitHub Pages
+# builds a project site from a branch, and carries memos/ and notes/ through
+# unchanged so that every link in the index resolves.
+#
+# The index used to be README.md, promoted by jekyll-readme-index. It is
+# index.html rendering _data/memos.yml now: the series is numbered, the
+# numbering has gaps, and a hand-numbered Markdown list cannot hold a gap --
+# Markdown folded the bare `5.` and `7.` lines into the memo above and then
+# renumbered everything that was left. README.md is generated from the same
+# data file by bin/build_readme.py, and checked here.
+#
+# The verification step exists because the old failure was silent. A build that
+# cannot find the memos now fails loudly rather than publishing a stub.
+name: Publish memos to Pages
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time, and do not cancel a run that is midway through
+# publishing.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # The index and README.md are two renderings of _data/memos.yml. This is
+      # what stops the second one going stale, which is the whole reason the
+      # memo list stopped living in README.md.
+      - name: README.md is in step with _data/memos.yml
+        run: python3 bin/build_readme.py --check
+
+      # Kept for whenever memos are written in LaTeX. There are none in the
+      # repository today, and latex-action on a glob that matches nothing is a
+      # slow no-op, so it only runs when there is something to compile.
+      - name: Any LaTeX sources?
+        id: tex
+        run: |
+          if ls *.tex >/dev/null 2>&1; then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            echo "No .tex files; skipping the LaTeX step."
+          fi
+
+      - name: Compile LaTeX memos to PDF
+        if: steps.tex.outputs.found == 'true'
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: "*.tex"
+          continue_on_error: true
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: The memos actually made it into the build
+        run: |
+          set -euo pipefail
+          fail=0
+
+          # The index. It renders _data/memos.yml; if the data file fails to
+          # load, Liquid renders an empty list rather than an error, and the
+          # page still builds - so count what came out rather than assume.
+          if [ ! -s _site/index.html ]; then
+            echo "::error::_site/index.html is missing or empty - the index was not built"
+            fail=1
+          elif ! grep -q "LightWork" _site/index.html; then
+            echo "::error::_site/index.html exists but does not mention LightWork - the wrong page was built"
+            fail=1
+          fi
+
+          # One row per memo, including the never-used numbers.
+          rows=$(grep -o '<li class="memo' _site/index.html | wc -l)
+          want=$(grep -c '^- number:' _data/memos.yml)
+          echo "index rows: $rows for $want memos plus the gaps"
+          if [ "$rows" -lt "$want" ]; then
+            echo "::error::the index rendered $rows rows for $want memos - _data/memos.yml did not load"
+            fail=1
+          fi
+
+          # The memos themselves.
+          have=$(ls _site/memos/*.pdf 2>/dev/null | wc -l)
+          want=$(ls memos/*.pdf 2>/dev/null | wc -l)
+          echo "memo PDFs: $have published, $want in the repository"
+          if [ "$have" -lt "$want" ]; then
+            echo "::error::only $have of $want memo PDFs reached the site"
+            fail=1
+          fi
+          if [ "$have" -lt 30 ]; then
+            echo "::error::$have memos published - this is the three-file failure again"
+            fail=1
+          fi
+
+          # Every memo the index links must exist in the output. This is the
+          # check that catches a memo listed but never committed. It warned
+          # rather than failed while memo 037 was in that state, which is
+          # exactly how 037 reached the published site as a dead link. The
+          # index is now clean, so this fails the build instead.
+          #
+          # If you are adding a memo entry before the PDF exists, write it as
+          # plain text rather than a link - see the 037 entry in README.md for
+          # the form. A link in the index is a promise that the file is there.
+          missing=0
+          while read -r target; do
+            [ -z "$target" ] && continue
+            if [ ! -f "_site/$target" ]; then
+              echo "::error::the index links $target and the build has no such file"
+              missing=$((missing + 1))
+            fi
+          done < <(grep -oE '\]\(memos/[^)]+\)' README.md | sed -E 's/^\]\(//; s/\)$//')
+          echo "index links with no file: $missing"
+          if [ "$missing" -gt 0 ]; then
+            echo "::error::$missing memo link(s) in README.md point at files that are not in the build"
+            fail=1
+          fi
+
+          exit $fail
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
