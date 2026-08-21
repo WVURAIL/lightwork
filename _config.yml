@@ -1,23 +1,44 @@
-# Built by GitHub Actions with the github-pages gem - see
-# .github/workflows/publish-memos.yml. The site is served at
-# https://wvurail.org/lightwork/, and the base path is set by
-# actions/configure-pages at build time, so it is deliberately not hardcoded
-# here.
+# LightWork Memo Series -- site configuration.
 #
-# README.md becomes the front page. That is jekyll-readme-index, which ships
-# with the github-pages gem; there is no index.md and there should not be one,
-# because the index would then have to be maintained in two places. The links
-# in README.md are relative (memos/... rather than /memos/...) so that they
-# work both on github.com and on the published site.
+# Built and deployed by .github/workflows/publish-memos.yml, which runs the
+# github-pages gem the same way GitHub Pages does. The base path is set by
+# actions/configure-pages at build time, so it is deliberately not hardcoded.
+#
+# There is no `theme:` any more. The site used jekyll-theme-minimal rendering
+# README.md through jekyll-readme-index, which meant the memo index was a
+# hand-numbered Markdown list and the site looked unrelated to the other two
+# WVU RAIL sites it sits beside. index.html renders _data/memos.yml now, and
+# README.md is generated from the same file by bin/build_readme.py so that
+# browsing the repository on github.com still gets a real index.
 
-theme: jekyll-theme-minimal
-
-title: LightWork Memo Series
+title:       LightWork Memo Series
+tagline:     Citizen science with radio telescopes
 description: >-
-  An informal series of numbered memoranda on Citizen Science with radio
-  telescopes - design, construction and operation.
+  An informal series of numbered memoranda on the design, construction and
+  operation of radio telescopes for citizen science.
+author:      WVU Radio Astronomy Instrumentation Laboratory
+url:         "https://wvurail.org"
+date_format: "%B %-d, %Y"
 
-# Not memo content: personal network helper scripts.
+github_username: WVURAIL
+
+markdown: kramdown
+kramdown:
+  input: GFM
+sass:
+  style: compressed
+
+# The authors write memos in Pages and Word and commit the source alongside the
+# PDF. The PDF is the memo; the source is an archival original nobody links, so
+# it is not worth publishing 40 MB of it. `*.pages` was already excluded and
+# `*.docx` was not, which was an oversight rather than a decision.
 exclude:
   - bin/
   - LICENSE
+  - README.md
+  - "*.pages"
+  - "*.docx"
+  - "*.pptx"
+  - Gemfile
+  - Gemfile.lock
+  - vendor
