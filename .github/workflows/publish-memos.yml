@@ -105,17 +105,27 @@ jobs:
           fi
 
           # Every memo the index links must exist in the output. This is the
-          # check that catches a memo listed but never committed - memo 037 is
-          # in that state today, so this warns rather than fails.
+          # check that catches a memo listed but never committed. It warned
+          # rather than failed while memo 037 was in that state, which is
+          # exactly how 037 reached the published site as a dead link. The
+          # index is now clean, so this fails the build instead.
+          #
+          # If you are adding a memo entry before the PDF exists, write it as
+          # plain text rather than a link - see the 037 entry in README.md for
+          # the form. A link in the index is a promise that the file is there.
           missing=0
           while read -r target; do
             [ -z "$target" ] && continue
             if [ ! -f "_site/$target" ]; then
-              echo "::warning::the index links $target and the build has no such file"
+              echo "::error::the index links $target and the build has no such file"
               missing=$((missing + 1))
             fi
           done < <(grep -oE '\]\(memos/[^)]+\)' README.md | sed -E 's/^\]\(//; s/\)$//')
           echo "index links with no file: $missing"
+          if [ "$missing" -gt 0 ]; then
+            echo "::error::$missing memo link(s) in README.md point at files that are not in the build"
+            fail=1
+          fi
 
           exit $fail
 
