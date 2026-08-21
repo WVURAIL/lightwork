@@ -1,0 +1,198 @@
+# The LightWork Memo series.
+#
+# The numbers here are the memo numbers, not positions in a list. The series
+# has gaps -- there is no memo 5, 7, 11, 12, 13 or 17 -- and it used to be kept
+# as a hand-numbered Markdown list in README.md, where the gaps were written as
+# bare `5.` and `7.` lines. Markdown reads a lone numeral on its own line as
+# continuation text, so it rendered those into the end of the previous memo's
+# description ("...first working horn antenna. 5.") and then renumbered the
+# whole list 1..32, at which point no number on the page matched the memo it
+# labelled.
+#
+# README.md is generated from this file by bin/build_readme.py, so the two
+# cannot disagree; CI fails if it is out of date. To add a memo: add an entry
+# here, run the script, commit both.
+#
+# status:
+#   active     -- published and current
+#   draft      -- circulated but marked under construction by its author
+#   superseded -- replaced by a later memo; keep it, say so
+#   announced  -- numbered and named, no PDF yet. Deliberately not a link:
+#                 a link in the index is a promise the file is there, and an
+#                 announced memo published as a link is how 037 reached the
+#                 live site as a dead one.
+
+- number: 0
+  title: "Memo inviting contributions to the LightWork Memo Series"
+  note: "Guidelines for the series, and an invitation to contribute to the topic of citizen science with radio telescopes."
+  file: "memos/LightWorkMemo000-r3.pdf"
+  status: active
+  author: "Glen Langston"
+  date: "2017 August 11"
+
+- number: 1
+  title: "First system temperature measurements with a horn antenna"
+  file: "memos/LightWorkMemo001-01.pdf"
+  status: active
+
+- number: 2
+  title: "Report on system temperature after a number of modifications"
+  file: "memos/LightWorkMemo002-r2.pdf"
+  status: active
+
+- number: 3
+  title: "Measurements of system gain as a function of feed probe placement"
+  file: "memos/LightWorkMemo003-r2.pdf"
+  status: active
+
+- number: 4
+  title: "Full system description of the first working horn antenna"
+  file: "memos/LightWorkMemo004-r3.pdf"
+  status: active
+
+- number: 6
+  title: "Sketch of amplifier board design for citizen science radio telescopes"
+  file: "memos/LightWorkMemo006-r6.pdf"
+  status: active
+
+- number: 8
+  title: "Performance of an amplifier system using low-cost LNA4ALL amplifiers"
+  file: "memos/LightWorkMemo008-r1.pdf"
+  status: active
+
+- number: 9
+  title: "Performance of an amplifier system using ZX60-P103LN+ amplifiers"
+  file: "memos/LightWorkMemo009-r3.pdf"
+  status: active
+
+- number: 10
+  title: "Measurements with an aluminium foam board horn and improved infrastructure"
+  file: "memos/LightWorkMemo010-4.pdf"
+  status: active
+
+- number: 14
+  title: "Galactic mapping with horn and amplifier box"
+  file: "memos/LightWorkMemo014r9.pdf"
+  status: active
+
+- number: 15
+  title: "Science Aficionados Amplifier Box B"
+  file: "memos/LightWorkMemo015-2.pdf"
+  status: active
+
+- number: 16
+  title: "Commercial parts list for Amplifier Box B"
+  file: "memos/LightWorkMemo016-1.pdf"
+  status: active
+
+- number: 18
+  title: "Galactic spectra data overview"
+  file: "memos/LightWorkMemo018-r1.pdf"
+  status: active
+
+- number: 19
+  title: "Mapping the Milky Way"
+  file: "memos/LightWorkMemo019-r1.pdf"
+  status: active
+
+- number: 20
+  title: "Radio astronomy with GNU Radio Companion"
+  file: "memos/LightWorkMemo020-r5.pdf"
+  status: active
+
+- number: 21
+  title: "Horn telescope base construction guide"
+  file: "memos/LightWorkMemo021-r6.pdf"
+  status: active
+
+- number: 22
+  title: "Horn telescope construction guide"
+  file: "memos/LightWorkMemo022-r14.pdf"
+  status: active
+
+- number: 23
+  title: "Event capture with the ADALM Pluto"
+  file: "memos/LightWorkMemo023-r2-EventCapture.pdf"
+  status: draft
+
+- number: 24
+  title: "Milky Way Galaxy armed and dangerous"
+  file: "memos/LightWorkMemo024-r2-Armed.pdf"
+  status: draft
+
+- number: 25
+  title: "Sensitivity of horn radio telescopes for detecting pulsars"
+  file: "memos/LightWorkMemo025-r5-DetectingPulsars.pdf"
+  status: active
+
+- number: 26
+  title: "Calibration and imaging steps"
+  file: "memos/LightWorkMemo026-r2-CalibrateMaps.pdf"
+  status: draft
+
+- number: 27
+  title: "Event detection with four horns"
+  file: "memos/LightWorkMemo027-r2-4HornEvents.pdf"
+  status: draft
+
+- number: 28
+  title: "Measure the noise temperature of the first LNA"
+  file: "memos/LightWorkMemo028-r7-NoiseTemp.pdf"
+  status: active
+
+- number: 29
+  title: "Overview of construction and use of a radio telescope"
+  file: "memos/LightWorkMemo029-r2-HydrogenLineProject.pdf"
+  status: active
+
+- number: 30
+  title: "A tale of three DSPIRA LNAs"
+  note: "Construction and analysis of three very high sensitivity versions of the WVU RAIL low-noise amplifiers for radio astronomy."
+  file: "memos/LightWork0030-r1-ATaleOfThreeLNAs.pdf"
+  status: active
+
+- number: 31
+  title: "Additive interferometry with two horn telescopes"
+  file: "memos/LightWorkMemo031.pdf"
+  status: active
+
+- number: 32
+  title: "Gather a pail of Milky Way"
+  note: "Construction guide for a very small, very sensitive horn radio telescope."
+  file: "memos/LightWorkMemo032-PailOfMilkyWay-r5.pdf"
+  status: active
+
+- number: 33
+  title: "A high school student's radio telescope and observations"
+  note: "A remarkably clear description of building a radio telescope and observing with it. Published on arXiv rather than in this repository."
+  url: "https://arxiv.org/pdf/2411.00057"
+  status: active
+  author: "Jack Phelps"
+  featured: true
+
+- number: 34
+  title: "Guide to building a Pail-of-Milky-Way telescope base"
+  note: "Construction guide for easily pointing a horn radio telescope."
+  file: "memos/LightWorkMemo034-SimpleBase-r5.pdf"
+  status: superseded
+  superseded_by: 36
+
+- number: 35
+  title: "Guide to building a cone horn telescope"
+  note: "Construction guide for an even simpler and more sensitive radio telescope."
+  file: "memos/LightWorkMemo035-ConeHorn-r6.pdf"
+  status: active
+  featured: true
+
+- number: 36
+  title: "Updated telescope base for the cone horn"
+  note: "Simpler to build than the base in memo 34, and works with the cone horn."
+  file: "memos/LightWorkMemo036-ConeHornBase-r7.pdf"
+  status: active
+  supersedes: 34
+  featured: true
+
+- number: 37
+  title: "Finding pointing offsets from 24 hours of observations"
+  note: "Named and numbered by its author; the PDF has not been contributed yet."
+  status: announced

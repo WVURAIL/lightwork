@@ -1,0 +1,29 @@
+<footer class="site-footer">
+   <div class="container">
+      <div class="footer-grid">
+         <div>
+            <h2>LightWork</h2>
+            <p>
+               An informal, numbered memo series on citizen science with radio
+               telescopes. Contributions are invited &mdash; the guidelines are in
+               <a href="{{ '/memos/LightWorkMemo000-r3.pdf' | relative_url }}">Memo 000</a>.
+            </p>
+         </div>
+         <div>
+            <h2>Elsewhere</h2>
+            <ul>
+               <li><a href="https://wvurail.org/dspira-lessons/">DSPIRA lessons</a></li>
+               <li><a href="https://wvurail.org/">WVU RAIL</a></li>
+               <li>
+                  <a href="https://github.com/{{ site.github_username }}/lightwork">
+                     {% include icon.html name="github" %} Source on GitHub
+                  </a>
+               </li>
+            </ul>
+         </div>
+      </div>
+      <p class="colophon">
+         Memos are free to read and to cite. &copy; {{ site.time | date: "%Y" }} their authors.
+      </p>
+   </div>
+</footer>

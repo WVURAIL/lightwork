@@ -12,9 +12,15 @@
 # README.md, the real index of thirty-one memos, was never rendered at all.
 #
 # This builds the repository with Jekyll instead, the same way GitHub Pages
-# builds a project site from a branch. That renders README.md as the index
-# (jekyll-readme-index, part of the github-pages gem) and carries memos/ and
-# notes/ through unchanged, so every link in the index resolves.
+# builds a project site from a branch, and carries memos/ and notes/ through
+# unchanged so that every link in the index resolves.
+#
+# The index used to be README.md, promoted by jekyll-readme-index. It is
+# index.html rendering _data/memos.yml now: the series is numbered, the
+# numbering has gaps, and a hand-numbered Markdown list cannot hold a gap --
+# Markdown folded the bare `5.` and `7.` lines into the memo above and then
+# renumbered everything that was left. README.md is generated from the same
+# data file by bin/build_readme.py, and checked here.
 #
 # The verification step exists because the old failure was silent. A build that
 # cannot find the memos now fails loudly rather than publishing a stub.
@@ -45,6 +51,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      # The index and README.md are two renderings of _data/memos.yml. This is
+      # what stops the second one going stale, which is the whole reason the
+      # memo list stopped living in README.md.
+      - name: README.md is in step with _data/memos.yml
+        run: python3 bin/build_readme.py --check
 
       # Kept for whenever memos are written in LaTeX. There are none in the
       # repository today, and latex-action on a glob that matches nothing is a
@@ -80,14 +92,23 @@ jobs:
           set -euo pipefail
           fail=0
 
-          # The index. README.md is promoted to index.html by
-          # jekyll-readme-index; if that ever stops happening the site loses
-          # its front page, so check rather than assume.
+          # The index. It renders _data/memos.yml; if the data file fails to
+          # load, Liquid renders an empty list rather than an error, and the
+          # page still builds - so count what came out rather than assume.
           if [ ! -s _site/index.html ]; then
-            echo "::error::_site/index.html is missing or empty - README.md was not rendered as the index"
+            echo "::error::_site/index.html is missing or empty - the index was not built"
             fail=1
           elif ! grep -q "LightWork" _site/index.html; then
             echo "::error::_site/index.html exists but does not mention LightWork - the wrong page was built"
+            fail=1
+          fi
+
+          # One row per memo, including the never-used numbers.
+          rows=$(grep -o '<li class="memo' _site/index.html | wc -l)
+          want=$(grep -c '^- number:' _data/memos.yml)
+          echo "index rows: $rows for $want memos plus the gaps"
+          if [ "$rows" -lt "$want" ]; then
+            echo "::error::the index rendered $rows rows for $want memos - _data/memos.yml did not load"
             fail=1
           fi
 
