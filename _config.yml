@@ -1,1 +1,23 @@
+# Built by GitHub Actions with the github-pages gem - see
+# .github/workflows/publish-memos.yml. The site is served at
+# https://wvurail.org/lightwork/, and the base path is set by
+# actions/configure-pages at build time, so it is deliberately not hardcoded
+# here.
+#
+# README.md becomes the front page. That is jekyll-readme-index, which ships
+# with the github-pages gem; there is no index.md and there should not be one,
+# because the index would then have to be maintained in two places. The links
+# in README.md are relative (memos/... rather than /memos/...) so that they
+# work both on github.com and on the published site.
+
 theme: jekyll-theme-minimal
+
+title: LightWork Memo Series
+description: >-
+  An informal series of numbered memoranda on Citizen Science with radio
+  telescopes - design, construction and operation.
+
+# Not memo content: personal network helper scripts.
+exclude:
+  - bin/
+  - LICENSE
