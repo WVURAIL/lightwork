@@ -1,0 +1,202 @@
+---
+layout: default
+title: LightWork Memo Series
+meta_description: >
+  An informal series of numbered memoranda on the design, construction and
+  operation of radio telescopes for citizen science, from WVU RAIL and the
+  LightWork collaboration.
+---
+{%- comment -%}
+The index renders _data/memos.yml. It used to be README.md rendered through
+jekyll-readme-index, which meant the numbering of a numbered memo series was a
+side effect of how Markdown handles a list: the gaps in the series were written
+as bare `5.` and `7.` lines, Markdown read those as continuation text of the
+memo above, and the browser renumbered what was left 1..32. Every number on the
+page was wrong.
+
+README.md is generated from the same data file by bin/build_readme.py, so
+browsing the repository on github.com still gets a real index and the two
+cannot drift apart.
+{%- endcomment -%}
+{%- assign memos = site.data.memos | sort: 'number' -%}
+{%- assign last = memos | last -%}
+{%- assign published = 0 -%}
+{%- for m in memos %}{% if m.file or m.url %}{% assign published = published | plus: 1 %}{% endif %}{% endfor -%}
+
+<div class="page-head">
+   <div class="container">
+      <p class="eyebrow">Citizen science with radio telescopes</p>
+      <h1>The LightWork Memo Series</h1>
+      <p class="lead">
+         Numbered memoranda on building and running radio telescopes, written by the
+         people doing it and meant to be used by anyone who wants to have a go.
+         Contributions are welcome; Memo 000 says how.
+      </p>
+      <dl class="stats">
+         <div>
+            <dt>Memos published</dt>
+            <dd>{{ published }}</dd>
+         </div>
+         <div>
+            <dt>Numbered through</dt>
+            <dd>{{ last.number }}</dd>
+         </div>
+         <div>
+            <dt>Since</dt>
+            <dd>2017</dd>
+         </div>
+      </dl>
+   </div>
+</div>
+
+<div class="section">
+   <div class="container">
+      <div class="section-head">
+         <h2>Why a memo series</h2>
+      </div>
+      <div class="prose">
+         <p>
+            This series is intended to encourage the public in the United States and
+            throughout the world to collaborate on the design, construction and operation
+            of radio telescopes, for the purpose of furthering science, engineering and
+            education. It is motivated by the effect a focused memo series can have on
+            organising the design and construction of large astronomical facilities.
+         </p>
+         <p>
+            The title has two implications. The first is that this series concerns work
+            with radio-wavelength light. The second is that those developing the
+            telescopes will grow a large collaboration, and make a significant
+            contribution to the world's understanding of the universe. Many hands make
+            LightWork.
+         </p>
+      </div>
+   </div>
+</div>
+
+<div class="section section--tint" id="memos">
+   <div class="container">
+      <div class="section-head">
+         <h2>The memos</h2>
+         <p>
+            Numbered in the order they were written. Some numbers were never used and
+            are marked as gaps rather than closed up, so if you are looking for memo 12,
+            it does not exist. A few of the larger PDFs will need downloading; GitHub
+            will not preview them all in the browser.
+         </p>
+      </div>
+
+      <ol class="memo-list">
+         {%- assign n = 0 -%}
+         {%- for m in memos -%}
+         {%- comment -%}
+         Fill the gap between the last memo number and this one. Liquid has no
+         range over variables in Jekyll 3.9, so this walks a counter instead.
+         {%- endcomment -%}
+         {%- for i in (1..40) -%}
+            {%- if n < m.number -%}
+            <li class="memo memo--gap">
+               <span class="memo__n">{{ n | prepend: '00' | slice: -3, 3 }}</span>
+               <p>never used</p>
+            </li>
+            {%- assign n = n | plus: 1 -%}
+            {%- else -%}
+            {%- break -%}
+            {%- endif -%}
+         {%- endfor -%}
+         {%- assign n = m.number | plus: 1 -%}
+
+         <li class="memo{% if m.status == 'announced' %} memo--announced{% endif %}">
+            <span class="memo__n">{{ m.number | prepend: '00' | slice: -3, 3 }}</span>
+            <div class="memo__body">
+               <h3 class="memo__title">
+                  {%- if m.file %}<a href="{{ m.file | relative_url }}">{{ m.title }}</a>
+                  {%- elsif m.url %}<a href="{{ m.url }}">{{ m.title }}</a>
+                  {%- else %}{{ m.title }}{% endif -%}
+                  {%- if m.status == 'draft' %}<span class="tag tag--draft">Under construction</span>{% endif -%}
+                  {%- if m.status == 'superseded' %}<span class="tag tag--superseded">Superseded</span>{% endif -%}
+                  {%- if m.status == 'announced' %}<span class="tag tag--announced">Announced</span>{% endif -%}
+                  {%- if m.featured %}<span class="tag tag--featured">Start here</span>{% endif -%}
+               </h3>
+               {%- if m.note %}<p class="memo__note">{{ m.note }}</p>{% endif %}
+               {%- if m.author or m.date or m.supersedes or m.superseded_by %}
+               <p class="memo__meta">
+                  {%- if m.author %}{{ m.author }}{% endif -%}
+                  {%- if m.author and m.date %} &middot; {% endif -%}
+                  {%- if m.date %}{{ m.date }}{% endif -%}
+                  {%- if m.superseded_by %}{% if m.author or m.date %} &middot; {% endif %}Replaced by memo {{ m.superseded_by | prepend: '00' | slice: -3, 3 }}{% endif -%}
+                  {%- if m.supersedes %}{% if m.author or m.date %} &middot; {% endif %}Replaces memo {{ m.supersedes | prepend: '00' | slice: -3, 3 }}{% endif -%}
+               </p>
+               {%- endif %}
+            </div>
+            {%- if m.file or m.url %}
+            <span class="memo__actions">
+               <a class="memo__link" href="{% if m.file %}{{ m.file | relative_url }}{% else %}{{ m.url }}{% endif %}">
+                  {% if m.url %}{% include icon.html name="external" %} arXiv{% else %}{% include icon.html name="pdf" %} PDF{% endif %}
+               </a>
+            </span>
+            {%- endif %}
+         </li>
+         {%- endfor %}
+      </ol>
+   </div>
+</div>
+
+<div class="section" id="videos">
+   <div class="container">
+      <div class="section-head">
+         <h2>Videos</h2>
+         <p>A few recordings that illustrate parts of the memos.</p>
+      </div>
+      <ul class="card-grid">
+         {%- for v in site.data.videos %}
+         <li class="card">
+            <h3><a href="{{ v.url }}">{% include icon.html name="video" %} {{ v.title }}</a></h3>
+            <p>{{ v.note }}</p>
+         </li>
+         {%- endfor %}
+      </ul>
+   </div>
+</div>
+
+<div class="section section--tint" id="templates">
+   <div class="container">
+      <div class="section-head">
+         <h2>Build templates</h2>
+         <p>
+            Print these at full size and trace them onto the board before cutting. The
+            <a href="https://github.com/{{ site.github_username }}/lightwork/tree/master/notes">notes
+            directory</a> also holds hints for Raspberry Pi computers.
+         </p>
+      </div>
+      <div class="template-grid">
+         <div class="template">
+            <a href="{{ '/notes/ElAxisCm.pdf' | relative_url }}">
+               <img src="{{ '/notes/ElAxisCm.png' | relative_url }}" width="140"
+                    alt="Elevation axis template, a protractor scale to be traced onto the telescope base." />
+            </a>
+            <div>
+               <h3><a href="{{ '/notes/ElAxisCm.pdf' | relative_url }}">Elevation axis template</a></h3>
+               <p>
+                  The telescope base carries a protractor so the observing angle is easy to
+                  set. Tape the template to the board to be cut, then drill through the
+                  marked locations.
+               </p>
+            </div>
+         </div>
+         <div class="template">
+            <a href="{{ '/notes/ElMountTemplate-r2.pdf' | relative_url }}">
+               <img src="{{ '/notes/ElMountTemplate-r2.png' | relative_url }}" width="140"
+                    alt="Elevation mount template, the outline of the wooden mount parts." />
+            </a>
+            <div>
+               <h3><a href="{{ '/notes/ElMountTemplate-r2.pdf' | relative_url }}">Elevation mount template</a></h3>
+               <p>
+                  The cone-horn design uses a wooden elevation mount of four parts. Front and
+                  back are cut from a 10-inch wide, 8-inch tall board 0.75 inches thick; the
+                  sides are two 14-inch balusters.
+               </p>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
