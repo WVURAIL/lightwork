@@ -46,7 +46,7 @@ The memo series title has two implications. The first is that this memo series c
 34. [LightWork memo 034](memos/LightWorkMemo034-SimpleBase-r5.pdf) Guide to Building a Pail-Of-Milky-Way Telescope Base. Construction guide for easily pointing a horn radio telescope.   This memo is superceeded by Memo 36.
 35. [LightWork memo 035](memos/LightWorkMemo035-ConeHorn-r6.pdf) Guide to Building a Cone Horn Telescope. Construction guide for an even simpler and more sensitive Radio Telescope. <span style='font-size:50px;'>&#128079;</span>
 36. [LightWork memo 036](memos/LightWorkMemo036-ConeHornBase-r7.pdf) Updated Telescope base, construction simpler and work with Cone Horn.  This memo superceeds memo 34. <span style='font-size:50px;'>&#128079;</span>
-37. [LightWork memo 037](memos/LightWorkMemo037-PointingOffsets-r1.pdf) Technique for finding pointing offsets based on 24 hours of observations.
+37. LightWork memo 037 Technique for finding pointing offsets based on 24 hours of observations. — _announced, PDF not yet contributed_
 _Note that some larger PDFs must be downloaded for viewing.  Github is not immediately displaying all files._
 
 # Lightwork Videos Series
