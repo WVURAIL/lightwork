@@ -1,1 +1,44 @@
-theme: jekyll-theme-minimal
+# LightWork Memo Series -- site configuration.
+#
+# Built and deployed by .github/workflows/publish-memos.yml, which runs the
+# github-pages gem the same way GitHub Pages does. The base path is set by
+# actions/configure-pages at build time, so it is deliberately not hardcoded.
+#
+# There is no `theme:` any more. The site used jekyll-theme-minimal rendering
+# README.md through jekyll-readme-index, which meant the memo index was a
+# hand-numbered Markdown list and the site looked unrelated to the other two
+# WVU RAIL sites it sits beside. index.html renders _data/memos.yml now, and
+# README.md is generated from the same file by bin/build_readme.py so that
+# browsing the repository on github.com still gets a real index.
+
+title:       LightWork Memo Series
+tagline:     Citizen science with radio telescopes
+description: >-
+  An informal series of numbered memoranda on the design, construction and
+  operation of radio telescopes for citizen science.
+author:      WVU Radio Astronomy Instrumentation Laboratory
+url:         "https://wvurail.org"
+date_format: "%B %-d, %Y"
+
+github_username: WVURAIL
+
+markdown: kramdown
+kramdown:
+  input: GFM
+sass:
+  style: compressed
+
+# The authors write memos in Pages and Word and commit the source alongside the
+# PDF. The PDF is the memo; the source is an archival original nobody links, so
+# it is not worth publishing 40 MB of it. `*.pages` was already excluded and
+# `*.docx` was not, which was an oversight rather than a decision.
+exclude:
+  - bin/
+  - LICENSE
+  - README.md
+  - "*.pages"
+  - "*.docx"
+  - "*.pptx"
+  - Gemfile
+  - Gemfile.lock
+  - vendor
