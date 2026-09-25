@@ -24,64 +24,55 @@ cannot drift apart.
 {%- for m in memos %}{% if m.file or m.url %}{% assign published = published | plus: 1 %}{% endif %}{% endfor -%}
 
 <div class="page-head">
-   <div class="container">
-      <p class="eyebrow">Citizen science with radio telescopes</p>
-      <h1>The LightWork Memo Series</h1>
-      <p class="lead">
-         Numbered memoranda on building and running radio telescopes, written by the
-         people doing it and meant to be used by anyone who wants to have a go.
-         Contributions are welcome; Memo 000 says how.
-      </p>
-      <dl class="stats">
-         <div>
-            <dt>Memos published</dt>
-            <dd>{{ published }}</dd>
-         </div>
-         <div>
-            <dt>Numbered through</dt>
-            <dd>{{ last.number }}</dd>
-         </div>
-         <div>
-            <dt>Since</dt>
-            <dd>2017</dd>
-         </div>
-      </dl>
-   </div>
+  <div class="container">
+    <p class="eyebrow">WVU RAIL · DSPIRA resources</p>
+    <h1>LightWork technical guides</h1>
+    <p class="lead">Build, test, and use a radio telescope. Start with a recommended guide or find a memo by topic.</p>
+    <p>For a classroom sequence, use <a href="/dspira/start/">DSPIRA lessons</a>. These memos provide additional technical references and alternative designs.</p>
+    <a href="#memos">Browse by topic</a> · <a href="#archive">Find a memo number</a>
+  </div>
 </div>
-
-<div class="section">
-   <div class="container">
-      <div class="section-head">
-         <h2>Why a memo series</h2>
-      </div>
-      <div class="prose">
-         <p>
-            This series is intended to encourage the public in the United States and
-            throughout the world to collaborate on the design, construction and operation
-            of radio telescopes, for the purpose of furthering science, engineering and
-            education. It is motivated by the effect a focused memo series can have on
-            organising the design and construction of large astronomical facilities.
-         </p>
-         <p>
-            The title has two implications. The first is that this series concerns work
-            with radio-wavelength light. The second is that those developing the
-            telescopes will grow a large collaboration, and make a significant
-            contribution to the world's understanding of the universe. Many hands make
-            LightWork.
-         </p>
-      </div>
-   </div>
+<div class="section" id="start">
+  <div class="container">
+    <h2>Recommended starting points</h2>
+    <ul class="card-grid">
+      {%- for m in memos -%}{%- if m.featured -%}
+      <li class="card">
+        <p class="eyebrow">Memo {{ m.number }}</p>
+        <h3><a href="{% if m.file %}{{ m.file | relative_url }}{% else %}{{ m.url }}{% endif %}">{{ m.title }}</a></h3>
+        <p>{{ m.note }}</p>
+        <p class="small">{% if m.url %}PDF on arXiv{% else %}PDF guide{% endif %}</p>
+      </li>
+      {%- endif -%}{%- endfor -%}
+    </ul>
+    <p>Choose one telescope design before buying parts. Memo 035 covers the cone horn; Memo 036 covers its matching base.</p>
+  </div>
 </div>
-
 <div class="section section--tint" id="memos">
+  <div class="container">
+    <h2>Browse by task</h2>
+    <p>All linked memos are PDFs. Drafts are labeled; review them before using their instructions.</p>
+    {%- assign topics = 'Build a telescope|Amplifiers and measurements|Observe and analyze|Experimental projects' | split: '|' -%}
+    <div class="topic-grid">
+      {%- for topic in topics -%}
+      <div><h3>{{ topic }}</h3><ul>
+        {%- for m in memos -%}{%- if m.topic == topic -%}
+        <li><a href="{% if m.file %}{{ m.file | relative_url }}{% else %}{{ m.url }}{% endif %}">{{ m.number | prepend: '00' | slice: -3, 3 }} · {{ m.title }}</a>{% if m.status == 'draft' %} <span class="tag">Draft</span>{% endif %}</li>
+        {%- endif -%}{%- endfor -%}
+      </ul></div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<div class="section" id="archive">
    <div class="container">
+      <details class="memo-archive">
+      <summary>Complete numbered archive</summary>
       <div class="section-head">
-         <h2>The memos</h2>
+         <h2>All memos and historical entries</h2>
          <p>
-            Numbered in the order they were written. Some numbers were never used and
-            are marked as gaps rather than closed up, so if you are looking for memo 12,
-            it does not exist. A few of the larger PDFs will need downloading; GitHub
-            will not preview them all in the browser.
+            Memos keep their original numbers. Unused numbers and superseded guides appear here for reference.
          </p>
       </div>
 
@@ -123,7 +114,7 @@ cannot drift apart.
                   {%- if m.author %}{{ m.author }}{% endif -%}
                   {%- if m.author and m.date %} &middot; {% endif -%}
                   {%- if m.date %}{{ m.date }}{% endif -%}
-                  {%- if m.superseded_by %}{% if m.author or m.date %} &middot; {% endif %}Replaced by memo {{ m.superseded_by | prepend: '00' | slice: -3, 3 }}{% endif -%}
+                  {%- if m.superseded_by %}{% if m.author or m.date %} &middot; {% endif %}{% assign replacement = memos | where: 'number', m.superseded_by | first %}<a href="{{ replacement.file | relative_url }}">Replaced by memo {{ m.superseded_by | prepend: '00' | slice: -3, 3 }}</a>{% endif -%}
                   {%- if m.supersedes %}{% if m.author or m.date %} &middot; {% endif %}Replaces memo {{ m.supersedes | prepend: '00' | slice: -3, 3 }}{% endif -%}
                </p>
                {%- endif %}
@@ -138,6 +129,7 @@ cannot drift apart.
          </li>
          {%- endfor %}
       </ol>
+      </details>
    </div>
 </div>
 
@@ -164,7 +156,7 @@ cannot drift apart.
          <h2>Build templates</h2>
          <p>
             Print these at full size and trace them onto the board before cutting. The
-            <a href="https://github.com/{{ site.github_username }}/lightwork/tree/master/notes">notes
+            <a href="https://github.com/{{ site.github_username }}/lightwork/tree/main/notes">notes
             directory</a> also holds hints for Raspberry Pi computers.
          </p>
       </div>
@@ -200,3 +192,20 @@ cannot drift apart.
       </div>
    </div>
 </div>
+
+<div class="section"><div class="container">
+  <details><summary>About the memo series and contributions</summary>
+    <p>LightWork shares practical work on citizen radio astronomy. Its name reflects radio light and collaboration: many hands make LightWork.</p>
+    <p>The archive contains {{ published }} published memos, numbered through {{ last.number }}.</p>
+    <p><a href="{{ '/memos/LightWorkMemo000-r3.pdf' | relative_url }}">Memo 000 explains how to contribute (PDF)</a>.</p>
+  </details>
+</div></div>
+<script>
+(function () {
+  function revealArchive() {
+    if (window.location.hash === '#archive') document.querySelector('.memo-archive').open = true;
+  }
+  window.addEventListener('hashchange', revealArchive);
+  revealArchive();
+})();
+</script>

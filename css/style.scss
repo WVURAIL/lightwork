@@ -361,3 +361,21 @@ main { min-height: 60vh; }
    .memo__link { border: 0; padding: 0; }
    a { color: #000; text-decoration: none; }
 }
+
+/* Share the lab colors and keep the guides close to the top. */
+.site-header { background: #002855; }
+.page-head { padding: 2rem 0; }
+.page-head h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+.topic-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+.topic-grid li { margin-bottom: .75rem; }
+summary { cursor: pointer; font-weight: 650; }
+.memo-archive > summary { font-size: 1.5rem; }
+@media (max-width: 700px) { .topic-grid { grid-template-columns: 1fr; } }
+
+.site-header .container { height: auto; min-height: var(--header-h); flex-wrap: wrap; padding-block: .75rem; gap: .5rem 1.25rem; }
+@media (max-width: 720px) {
+  .site-header { position: static; }
+  .site-nav { width: 100%; margin-left: 0; }
+  .site-nav a { padding: .6rem .55rem; }
+  .site-nav .nav-home { margin-left: 0; border-left: 0; }
+}
