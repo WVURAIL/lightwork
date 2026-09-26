@@ -31,7 +31,7 @@ def publish(site, root=ROOT):
         if target.exists() and target.read_bytes() != source.read_bytes():
             raise ValueError(f"Refusing to replace different content at {target}")
     for source, target in copies:
-        if source == target:
+        if source == target or target.exists():
             continue
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, target)

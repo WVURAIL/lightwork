@@ -36,6 +36,7 @@ jobs:
           destination: ./_site
       - name: Preserve downloads and check the published files
         run: |
+          sudo chown -R "$(id -u):$(id -g)" _site
           python3 scripts/publish_assets.py --site _site
           python3 scripts/check_site.py --site _site --baseurl '${{ steps.pages.outputs.base_path }}'
       - uses: actions/upload-pages-artifact@v3
