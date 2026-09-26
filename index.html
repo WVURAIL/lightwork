@@ -14,7 +14,7 @@ as bare `5.` and `7.` lines, Markdown read those as continuation text of the
 memo above, and the browser renumbered what was left 1..32. Every number on the
 page was wrong.
 
-README.md is generated from the same data file by bin/build_readme.py, so
+memos/README.md is generated from the same data file by scripts/build_memo_index.py, so
 browsing the repository on github.com still gets a real index and the two
 cannot drift apart.
 {%- endcomment -%}
@@ -155,19 +155,19 @@ cannot drift apart.
       <div class="section-head">
          <h2>Build templates</h2>
          <p>
-            Print these at full size and trace them onto the board before cutting. The
-            <a href="https://github.com/{{ site.github_username }}/lightwork/tree/main/notes">notes
-            directory</a> also holds hints for Raspberry Pi computers.
+            Print these at full size and trace them onto the board before cutting.
+            The <a href="https://github.com/{{ site.github_username }}/lightwork/tree/main/templates">template folder</a>
+            also includes image exports and earlier versions.
          </p>
       </div>
       <div class="template-grid">
          <div class="template">
-            <a href="{{ '/notes/ElAxisCm.pdf' | relative_url }}">
-               <img src="{{ '/notes/ElAxisCm.png' | relative_url }}" width="140"
+            <a href="{{ '/templates/elevation-axis/elevation-axis.pdf' | relative_url }}">
+               <img src="{{ '/templates/elevation-axis/elevation-axis.png' | relative_url }}" width="140"
                     alt="Elevation axis template, a protractor scale to be traced onto the telescope base." />
             </a>
             <div>
-               <h3><a href="{{ '/notes/ElAxisCm.pdf' | relative_url }}">Elevation axis template</a></h3>
+               <h3><a href="{{ '/templates/elevation-axis/elevation-axis.pdf' | relative_url }}">Elevation axis template</a></h3>
                <p>
                   The telescope base carries a protractor so the observing angle is easy to
                   set. Tape the template to the board to be cut, then drill through the
@@ -176,12 +176,12 @@ cannot drift apart.
             </div>
          </div>
          <div class="template">
-            <a href="{{ '/notes/ElMountTemplate-r2.pdf' | relative_url }}">
-               <img src="{{ '/notes/ElMountTemplate-r2.png' | relative_url }}" width="140"
+            <a href="{{ '/templates/elevation-mount/elevation-mount-r2.pdf' | relative_url }}">
+               <img src="{{ '/templates/elevation-mount/elevation-mount-r2.png' | relative_url }}" width="140"
                     alt="Elevation mount template, the outline of the wooden mount parts." />
             </a>
             <div>
-               <h3><a href="{{ '/notes/ElMountTemplate-r2.pdf' | relative_url }}">Elevation mount template</a></h3>
+               <h3><a href="{{ '/templates/elevation-mount/elevation-mount-r2.pdf' | relative_url }}">Elevation mount template</a></h3>
                <p>
                   The cone-horn design uses a wooden elevation mount of four parts. Front and
                   back are cut from a 10-inch wide, 8-inch tall board 0.75 inches thick; the
@@ -193,11 +193,19 @@ cannot drift apart.
    </div>
 </div>
 
+<div class="section" id="teaching-materials"><div class="container">
+  <h2>Teaching materials</h2>
+  <ul>
+    <li><a href="{{ '/worksheets/milky-way-viewpoints.pdf' | relative_url }}">Milky Way viewpoints worksheet (PDF)</a></li>
+    <li><a href="{{ '/presentations/milky-way-students-and-teachers-r5.pptx' | relative_url }}">Milky Way teaching slides (PowerPoint)</a></li>
+  </ul>
+</div></div>
+
 <div class="section"><div class="container">
   <details><summary>About the memo series and contributions</summary>
     <p>LightWork shares practical work on citizen radio astronomy. Its name reflects radio light and collaboration: many hands make LightWork.</p>
     <p>The archive contains {{ published }} published memos, numbered through {{ last.number }}.</p>
-    <p><a href="{{ '/memos/LightWorkMemo000-r3.pdf' | relative_url }}">Memo 000 explains how to contribute (PDF)</a>.</p>
+    <p><a href="{{ '/memos/memo-000-r3.pdf' | relative_url }}">Memo 000 explains how to contribute (PDF)</a>.</p>
   </details>
 </div></div>
 <script>

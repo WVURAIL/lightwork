@@ -4,7 +4,7 @@
    <title>{% if page.title and page.title != site.title %}{{ page.title }} &middot; {% endif %}{{ site.title }}</title>
    <meta name="description" content="{{ page.meta_description | default: site.description | strip_newlines | strip }}" />
    <link rel="canonical" href="{{ page.url | absolute_url }}" />
-   <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}" />
+   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
    <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml" />
    <meta property="og:title" content="{{ page.title | default: site.title }}" />
    <meta property="og:description" content="{{ page.meta_description | default: site.description | strip_newlines | strip }}" />
