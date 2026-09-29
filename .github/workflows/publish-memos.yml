@@ -1,47 +1,55 @@
 name: Publish memos to Pages
-
-on:
+'on':
   push:
-    branches: [main, master]
-  workflow_dispatch:
-
+    branches:
+    - main
+  pull_request: null
+  workflow_dispatch: null
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
 concurrency:
-  group: pages
-  cancel-in-progress: false
-
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  build-and-deploy:
+  build:
+    name: Validate memos
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      with:
+        persist-credentials: false
+    - name: Check the memo index and download preservation
+      run: |
+        python3 scripts/build_memo_index.py --check
+        python3 -m unittest discover -s tests
+    - uses: ruby/setup-ruby@14594264cd68ce8a2345dd349bc3d138a4ef85c8 # v1
+      with:
+        ruby-version: '3.3'
+        bundler-cache: true
+    - name: Build with locked dependencies
+      run: |
+        bundle exec jekyll build --trace --baseurl /lightwork
+      env:
+        JEKYLL_ENV: production
+    - name: Preserve downloads and check the published files
+      run: |
+        python3 scripts/publish_assets.py --site _site
+        python3 scripts/check_site.py --site _site --baseurl '/lightwork'
+    - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
+      with:
+        path: ./_site
+      if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-      - name: Check the memo index and download preservation
-        run: |
-          python3 scripts/build_memo_index.py --check
-          python3 -m unittest discover -s tests
-      - name: Configure Pages
-        id: pages
-        uses: actions/configure-pages@v5
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
-      - name: Preserve downloads and check the published files
-        run: |
-          sudo chown -R "$(id -u):$(id -g)" _site
-          python3 scripts/publish_assets.py --site _site
-          python3 scripts/check_site.py --site _site --baseurl '${{ steps.pages.outputs.base_path }}'
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./_site
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    - id: deployment
+      uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
