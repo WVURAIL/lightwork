@@ -33,3 +33,9 @@ The website and [memo index](memos/) use the same catalog in `_data/memos.yml`.
 
 LightWork connects contributors building and studying radio telescopes: many hands make LightWork.
 See [Memo 000](memos/memo-000-r3.pdf) for the series guidelines and [LICENSE](LICENSE) for the repository's notice.
+
+## Build and publication
+
+Use Ruby 3.3 and the committed `Gemfile.lock` for local previews and CI.
+Run `bundle install`, then `bundle exec jekyll serve --baseurl /lightwork`.
+Pull requests run the full website checks. Publishing from `main` deploys the same validated artifact.

@@ -37,4 +37,5 @@ python3 scripts/publish_assets.py --site _site
 python3 scripts/check_site.py --site _site --baseurl /lightwork
 ```
 
-The workflow uses the GitHub Pages Jekyll environment and repeats these checks before deployment.
+Use Ruby 3.3 and run `bundle install` with the committed lockfile first.
+Pull requests run these checks; publishing from `main` deploys the same validated artifact.
