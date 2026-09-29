@@ -14,7 +14,7 @@ as bare `5.` and `7.` lines, Markdown read those as continuation text of the
 memo above, and the browser renumbered what was left 1..32. Every number on the
 page was wrong.
 
-README.md is generated from the same data file by bin/build_readme.py, so
+memos/README.md is generated from the same data file by scripts/build_memo_index.py, so
 browsing the repository on github.com still gets a real index and the two
 cannot drift apart.
 {%- endcomment -%}
@@ -24,64 +24,55 @@ cannot drift apart.
 {%- for m in memos %}{% if m.file or m.url %}{% assign published = published | plus: 1 %}{% endif %}{% endfor -%}
 
 <div class="page-head">
-   <div class="container">
-      <p class="eyebrow">Citizen science with radio telescopes</p>
-      <h1>The LightWork Memo Series</h1>
-      <p class="lead">
-         Numbered memoranda on building and running radio telescopes, written by the
-         people doing it and meant to be used by anyone who wants to have a go.
-         Contributions are welcome; Memo 000 says how.
-      </p>
-      <dl class="stats">
-         <div>
-            <dt>Memos published</dt>
-            <dd>{{ published }}</dd>
-         </div>
-         <div>
-            <dt>Numbered through</dt>
-            <dd>{{ last.number }}</dd>
-         </div>
-         <div>
-            <dt>Since</dt>
-            <dd>2017</dd>
-         </div>
-      </dl>
-   </div>
+  <div class="container">
+    <p class="eyebrow">WVU RAIL · DSPIRA resources</p>
+    <h1>LightWork technical guides</h1>
+    <p class="lead">Build, test, and use a radio telescope. Start with a recommended guide or find a memo by topic.</p>
+    <p>For a classroom sequence, use <a href="/dspira/start/">DSPIRA lessons</a>. These memos provide additional technical references and alternative designs.</p>
+    <a href="#memos">Browse by topic</a> · <a href="#archive">Find a memo number</a>
+  </div>
 </div>
-
-<div class="section">
-   <div class="container">
-      <div class="section-head">
-         <h2>Why a memo series</h2>
-      </div>
-      <div class="prose">
-         <p>
-            This series is intended to encourage the public in the United States and
-            throughout the world to collaborate on the design, construction and operation
-            of radio telescopes, for the purpose of furthering science, engineering and
-            education. It is motivated by the effect a focused memo series can have on
-            organising the design and construction of large astronomical facilities.
-         </p>
-         <p>
-            The title has two implications. The first is that this series concerns work
-            with radio-wavelength light. The second is that those developing the
-            telescopes will grow a large collaboration, and make a significant
-            contribution to the world's understanding of the universe. Many hands make
-            LightWork.
-         </p>
-      </div>
-   </div>
+<div class="section" id="start">
+  <div class="container">
+    <h2>Recommended starting points</h2>
+    <ul class="card-grid">
+      {%- for m in memos -%}{%- if m.featured -%}
+      <li class="card">
+        <p class="eyebrow">Memo {{ m.number }}</p>
+        <h3><a href="{% if m.file %}{{ m.file | relative_url }}{% else %}{{ m.url }}{% endif %}">{{ m.title }} <span class="small">(view PDF)</span></a></h3>
+        <p>{{ m.note }}</p>
+        <p class="small">{% if m.url %}PDF on arXiv{% else %}PDF guide{% endif %}</p>
+      </li>
+      {%- endif -%}{%- endfor -%}
+    </ul>
+    <p>Choose one telescope design before buying parts. Memo 035 covers the cone horn; Memo 036 covers its matching base.</p>
+  </div>
 </div>
-
 <div class="section section--tint" id="memos">
+  <div class="container">
+    <h2>Browse by task</h2>
+    <p>All linked memos are PDFs. Drafts are labeled; review them before using their instructions.</p>
+    {%- assign topics = 'Build a telescope|Amplifiers and measurements|Observe and analyze|Experimental projects' | split: '|' -%}
+    <div class="topic-grid">
+      {%- for topic in topics -%}
+      <div><h3>{{ topic }}</h3><ul>
+        {%- for m in memos -%}{%- if m.topic == topic -%}
+        <li><a href="{% if m.file %}{{ m.file | relative_url }}{% else %}{{ m.url }}{% endif %}">{{ m.number | prepend: '00' | slice: -3, 3 }} · {{ m.title }} <span class="small">(view PDF)</span></a>{% if m.status == 'draft' %} <span class="tag">Draft</span>{% endif %}</li>
+        {%- endif -%}{%- endfor -%}
+      </ul></div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<div class="section" id="archive">
    <div class="container">
+      <details class="memo-archive">
+      <summary>Complete numbered archive</summary>
       <div class="section-head">
-         <h2>The memos</h2>
+         <h2>All memos and historical entries</h2>
          <p>
-            Numbered in the order they were written. Some numbers were never used and
-            are marked as gaps rather than closed up, so if you are looking for memo 12,
-            it does not exist. A few of the larger PDFs will need downloading; GitHub
-            will not preview them all in the browser.
+            Memos keep their original numbers. Unused numbers and superseded guides appear here for reference.
          </p>
       </div>
 
@@ -109,8 +100,8 @@ cannot drift apart.
             <span class="memo__n">{{ m.number | prepend: '00' | slice: -3, 3 }}</span>
             <div class="memo__body">
                <h3 class="memo__title">
-                  {%- if m.file %}<a href="{{ m.file | relative_url }}">{{ m.title }}</a>
-                  {%- elsif m.url %}<a href="{{ m.url }}">{{ m.title }}</a>
+                  {%- if m.file %}<a href="{{ m.file | relative_url }}">{{ m.title }} <span class="small">(view PDF)</span></a>
+                  {%- elsif m.url %}<a href="{{ m.url }}">{{ m.title }} <span class="small">(view PDF)</span></a>
                   {%- else %}{{ m.title }}{% endif -%}
                   {%- if m.status == 'draft' %}<span class="tag tag--draft">Under construction</span>{% endif -%}
                   {%- if m.status == 'superseded' %}<span class="tag tag--superseded">Superseded</span>{% endif -%}
@@ -123,21 +114,22 @@ cannot drift apart.
                   {%- if m.author %}{{ m.author }}{% endif -%}
                   {%- if m.author and m.date %} &middot; {% endif -%}
                   {%- if m.date %}{{ m.date }}{% endif -%}
-                  {%- if m.superseded_by %}{% if m.author or m.date %} &middot; {% endif %}Replaced by memo {{ m.superseded_by | prepend: '00' | slice: -3, 3 }}{% endif -%}
+                  {%- if m.superseded_by %}{% if m.author or m.date %} &middot; {% endif %}{% assign replacement = memos | where: 'number', m.superseded_by | first %}<a href="{{ replacement.file | relative_url }}">Replaced by memo {{ m.superseded_by | prepend: '00' | slice: -3, 3 }} (view PDF)</a>{% endif -%}
                   {%- if m.supersedes %}{% if m.author or m.date %} &middot; {% endif %}Replaces memo {{ m.supersedes | prepend: '00' | slice: -3, 3 }}{% endif -%}
                </p>
                {%- endif %}
             </div>
             {%- if m.file or m.url %}
             <span class="memo__actions">
-               <a class="memo__link" href="{% if m.file %}{{ m.file | relative_url }}{% else %}{{ m.url }}{% endif %}">
-                  {% if m.url %}{% include icon.html name="external" %} arXiv{% else %}{% include icon.html name="pdf" %} PDF{% endif %}
+               <a class="memo__link" aria-label="View PDF: {{ m.title | escape }}" href="{% if m.file %}{{ m.file | relative_url }}{% else %}{{ m.url }}{% endif %}">
+                  {% include icon.html name="pdf" %} View PDF{% if m.url %} on arXiv{% endif %}
                </a>
             </span>
             {%- endif %}
          </li>
          {%- endfor %}
       </ol>
+      </details>
    </div>
 </div>
 
@@ -163,19 +155,19 @@ cannot drift apart.
       <div class="section-head">
          <h2>Build templates</h2>
          <p>
-            Print these at full size and trace them onto the board before cutting. The
-            <a href="https://github.com/{{ site.github_username }}/lightwork/tree/master/notes">notes
-            directory</a> also holds hints for Raspberry Pi computers.
+            Print these at full size and trace them onto the board before cutting.
+            The <a href="https://github.com/{{ site.github_username }}/lightwork/tree/main/templates">template folder</a>
+            also includes image exports and earlier versions.
          </p>
       </div>
       <div class="template-grid">
          <div class="template">
-            <a href="{{ '/notes/ElAxisCm.pdf' | relative_url }}">
-               <img src="{{ '/notes/ElAxisCm.png' | relative_url }}" width="140"
-                    alt="Elevation axis template, a protractor scale to be traced onto the telescope base." />
+            <a href="{{ '/templates/elevation-axis/elevation-axis.pdf' | relative_url }}">
+               <img src="{{ '/templates/elevation-axis/elevation-axis.png' | relative_url }}" width="140"
+                    alt="View PDF: elevation axis template, a protractor scale to be traced onto the telescope base." />
             </a>
             <div>
-               <h3><a href="{{ '/notes/ElAxisCm.pdf' | relative_url }}">Elevation axis template</a></h3>
+               <h3><a href="{{ '/templates/elevation-axis/elevation-axis.pdf' | relative_url }}">Elevation axis template (view PDF)</a></h3>
                <p>
                   The telescope base carries a protractor so the observing angle is easy to
                   set. Tape the template to the board to be cut, then drill through the
@@ -184,12 +176,12 @@ cannot drift apart.
             </div>
          </div>
          <div class="template">
-            <a href="{{ '/notes/ElMountTemplate-r2.pdf' | relative_url }}">
-               <img src="{{ '/notes/ElMountTemplate-r2.png' | relative_url }}" width="140"
-                    alt="Elevation mount template, the outline of the wooden mount parts." />
+            <a href="{{ '/templates/elevation-mount/elevation-mount-r2.pdf' | relative_url }}">
+               <img src="{{ '/templates/elevation-mount/elevation-mount-r2.png' | relative_url }}" width="140"
+                    alt="View PDF: elevation mount template, the outline of the wooden mount parts." />
             </a>
             <div>
-               <h3><a href="{{ '/notes/ElMountTemplate-r2.pdf' | relative_url }}">Elevation mount template</a></h3>
+               <h3><a href="{{ '/templates/elevation-mount/elevation-mount-r2.pdf' | relative_url }}">Elevation mount template (view PDF)</a></h3>
                <p>
                   The cone-horn design uses a wooden elevation mount of four parts. Front and
                   back are cut from a 10-inch wide, 8-inch tall board 0.75 inches thick; the
@@ -200,3 +192,28 @@ cannot drift apart.
       </div>
    </div>
 </div>
+
+<div class="section" id="teaching-materials"><div class="container">
+  <h2>Teaching materials</h2>
+  <ul>
+    <li><a href="{{ '/worksheets/milky-way-viewpoints.pdf' | relative_url }}">Milky Way viewpoints worksheet (view PDF)</a></li>
+    <li><a href="{{ '/presentations/milky-way-students-and-teachers-r5.pptx' | relative_url }}" download>Download Milky Way teaching slides (PowerPoint)</a></li>
+  </ul>
+</div></div>
+
+<div class="section"><div class="container">
+  <details><summary>About the memo series and contributions</summary>
+    <p>LightWork shares practical work on citizen radio astronomy. Its name reflects radio light and collaboration: many hands make LightWork.</p>
+    <p>The archive contains {{ published }} published memos, numbered through {{ last.number }}.</p>
+    <p><a href="{{ '/memos/memo-000-r3.pdf' | relative_url }}">Memo 000 explains how to contribute (view PDF)</a>.</p>
+  </details>
+</div></div>
+<script>
+(function () {
+  function revealArchive() {
+    if (window.location.hash === '#archive') document.querySelector('.memo-archive').open = true;
+  }
+  window.addEventListener('hashchange', revealArchive);
+  revealArchive();
+})();
+</script>
