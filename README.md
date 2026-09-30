@@ -1,7 +1,7 @@
 # LightWork
 
 Technical memos and build resources for citizen radio astronomy.
-Use the [website](https://wvurail.org/lightwork/) to find guides by topic, watch videos, and download materials.
+Use the [website](https://rail.wvu.edu/lightwork/) to find guides by topic, watch videos, and download materials.
 
 ## Find what you need
 
