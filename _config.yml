@@ -5,7 +5,7 @@ description: >-
   An informal series of numbered memoranda on the design, construction and
   operation of radio telescopes for citizen science.
 author: WVU Radio Astronomy Instrumentation Laboratory
-url: "https://wvurail.org"
+url: "https://rail.wvu.edu"
 date_format: "%B %-d, %Y"
 github_username: WVURAIL
 markdown: kramdown

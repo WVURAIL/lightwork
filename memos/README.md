@@ -3,7 +3,7 @@
 # Memo index
 
 Memo numbers and titles remain unchanged. Unused numbers remain gaps in the series.
-The [website](https://wvurail.org/lightwork/) groups current guides by topic.
+The [website](https://rail.wvu.edu/lightwork/) groups current guides by topic.
 See [earlier PDF revisions](history/) and [editable originals](../sources/memos/).
 
 | Memo | Title | Status |
