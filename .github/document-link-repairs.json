@@ -1,0 +1,326 @@
+{
+  "date": "2026-09-30",
+  "purpose": "Repair confirmed broken citation destinations in current documents without changing visible content. Explicit historical versions remain unchanged.",
+  "documents": [
+    {
+      "file": "memos/memo-004-r3.pdf",
+      "original_sha256": "b0356957a8ed50365fd9968112a098a3aa71032ac279ecbcb71cc4e82dc28aaa",
+      "updated_sha256": "f49f123f0eb8105f721355fdef7d2aad4b187c8aaf2a4f600f23ed71dc16733d",
+      "changes": [
+        {
+          "page": 8,
+          "annotation_xref": 92,
+          "old_url": "http://www.sbrac.org/files/budget_radio_telescope.pdf",
+          "new_url": "https://www.ccera.ca/files/budget_radio_telescope.pdf",
+          "mapping_type": "verified_same_resource",
+          "evidence": "Same title and author: A 21cm Radio Telescope for the Cost-Conscious, Marcus Leech; hosted by the Canadian Centre for Experimental Radio Astronomy."
+        },
+        {
+          "page": 8,
+          "annotation_xref": 93,
+          "old_url": "http://www.sbrac.org/files/budget_radio_telescope.pdf",
+          "new_url": "https://www.ccera.ca/files/budget_radio_telescope.pdf",
+          "mapping_type": "verified_same_resource",
+          "evidence": "Same title and author: A 21cm Radio Telescope for the Cost-Conscious, Marcus Leech; hosted by the Canadian Centre for Experimental Radio Astronomy."
+        }
+      ],
+      "validation": {
+        "visible_text_unchanged": true,
+        "rendered_pixels_unchanged": true,
+        "all_other_office_members_identical": null
+      }
+    },
+    {
+      "file": "memos/memo-010-r4.pdf",
+      "original_sha256": "cdcd610d72570d16a7a45cfc8f1a1fffeb7372a0f29079d7b9d9044d34b90f57",
+      "updated_sha256": "0f426c52015e104ff76a0c193e2b69885a1c1c32706d153da7db7b244da4a889",
+      "changes": [
+        {
+          "page": 1,
+          "annotation_xref": 14,
+          "old_url": "http://www.minicircuits.com/pages/npa/TAMP-1521GLN+_NPA.pdf",
+          "new_url": "https://www.minicircuits.com/pdfs/TAMP-1521GLN+.pdf",
+          "mapping_type": "official_current_datasheet",
+          "evidence": "Manufacturer current TAMP-1521GLN+ dashboard directly links this exact model datasheet. Original NPA announcement may differ in revision; current datasheet is not proven byte-identical."
+        }
+      ],
+      "validation": {
+        "visible_text_unchanged": true,
+        "rendered_pixels_unchanged": true,
+        "all_other_office_members_identical": null
+      }
+    },
+    {
+      "file": "memos/memo-014-r9.pdf",
+      "original_sha256": "e32b169f4fbb0b688ffb6b357a291721551c8f55702acc714df8b5b395b40600",
+      "updated_sha256": "76e610e9fc7e9cfe2a888c605eac01d6fa7bcf6a06cf8aa710ebead3bdbb87af",
+      "changes": [
+        {
+          "page": 3,
+          "annotation_xref": 39,
+          "old_url": "http://www.minicircuits.com/pages/npa/TAMP-1521GLN+_NPA.pdf",
+          "new_url": "https://www.minicircuits.com/pdfs/TAMP-1521GLN+.pdf",
+          "mapping_type": "official_current_datasheet",
+          "evidence": "Manufacturer current TAMP-1521GLN+ dashboard directly links this exact model datasheet. Original NPA announcement may differ in revision; current datasheet is not proven byte-identical."
+        }
+      ],
+      "validation": {
+        "visible_text_unchanged": true,
+        "rendered_pixels_unchanged": true,
+        "all_other_office_members_identical": null
+      }
+    },
+    {
+      "file": "memos/memo-020-r5.pdf",
+      "original_sha256": "e896206fd43afe8312e9332402c6b494dcdbade8cee10d98b6046eb80a1967a9",
+      "updated_sha256": "17154ae56f4457d729036e266b54114d18426158332d89796c8915deb96c4fd3",
+      "changes": [
+        {
+          "page": 1,
+          "annotation_xref": 16,
+          "old_url": "https://www.cv.nrao.edu/course/astr534/Introradastro.html",
+          "new_url": "https://www.cv.nrao.edu/~sransom/web/Ch1.html",
+          "mapping_type": "official_updated_edition",
+          "evidence": "NRAO Essential Radio Astronomy landing page https://science.nrao.edu/opportunities/courses/era explicitly replaces its obsolete course and links Chapter1 Introduction here. Same authors/title/course but a revised textbook, not an exact old-page copy."
+        },
+        {
+          "page": 1,
+          "annotation_xref": 17,
+          "old_url": "https://www.cv.nrao.edu/course/astr534/Introradastro.html",
+          "new_url": "https://www.cv.nrao.edu/~sransom/web/Ch1.html",
+          "mapping_type": "official_updated_edition",
+          "evidence": "NRAO Essential Radio Astronomy landing page https://science.nrao.edu/opportunities/courses/era explicitly replaces its obsolete course and links Chapter1 Introduction here. Same authors/title/course but a revised textbook, not an exact old-page copy."
+        },
+        {
+          "page": 3,
+          "annotation_xref": 46,
+          "old_url": "http://www.spitzer.caltech.edu/mission/profile/50-Robert-Hurt",
+          "new_url": "https://www.spitzer.caltech.edu/author/50",
+          "mapping_type": "verified_same_resource",
+          "evidence": "Same official author profile, with matching profile number and Robert Hurt biography."
+        },
+        {
+          "page": 3,
+          "annotation_xref": 47,
+          "old_url": "http://www.spitzer.caltech.edu/mission/profile/50-Robert-Hurt",
+          "new_url": "https://www.spitzer.caltech.edu/author/50",
+          "mapping_type": "verified_same_resource",
+          "evidence": "Same official author profile, with matching profile number and Robert Hurt biography."
+        }
+      ],
+      "validation": {
+        "visible_text_unchanged": true,
+        "rendered_pixels_unchanged": true,
+        "all_other_office_members_identical": null
+      }
+    },
+    {
+      "file": "memos/memo-023-r2.pdf",
+      "original_sha256": "076ee4be9458cfc54c6bc1f05576a3aaf76a2fb0508e61a617ee0d6e58bc1cc4",
+      "updated_sha256": "d88a3224b8df5cfe22f7d31c0f06051017deb924cf79bf79fc078f1cc7fd9e83",
+      "changes": [
+        {
+          "page": 1,
+          "annotation_xref": 13,
+          "old_url": "https://www.cv.nrao.edu/course/astr534/Introradastro.html",
+          "new_url": "https://www.cv.nrao.edu/~sransom/web/Ch1.html",
+          "mapping_type": "official_updated_edition",
+          "evidence": "NRAO Essential Radio Astronomy landing page https://science.nrao.edu/opportunities/courses/era explicitly replaces its obsolete course and links Chapter1 Introduction here. Same authors/title/course but a revised textbook, not an exact old-page copy."
+        },
+        {
+          "page": 1,
+          "annotation_xref": 14,
+          "old_url": "https://www.cv.nrao.edu/course/astr534/Introradastro.html",
+          "new_url": "https://www.cv.nrao.edu/~sransom/web/Ch1.html",
+          "mapping_type": "official_updated_edition",
+          "evidence": "NRAO Essential Radio Astronomy landing page https://science.nrao.edu/opportunities/courses/era explicitly replaces its obsolete course and links Chapter1 Introduction here. Same authors/title/course but a revised textbook, not an exact old-page copy."
+        }
+      ],
+      "validation": {
+        "visible_text_unchanged": true,
+        "rendered_pixels_unchanged": true,
+        "all_other_office_members_identical": null
+      }
+    },
+    {
+      "file": "memos/memo-024-r2.pdf",
+      "original_sha256": "1df92c9cdf42f24867a0a48e507abd10cab7e3dc41244747aebda462e7aa4457",
+      "updated_sha256": "5c5a63c8a6f1576b2656b72d54511d5f66bbd45dac25a5c6899956e1fae482dc",
+      "changes": [
+        {
+          "page": 3,
+          "annotation_xref": 44,
+          "old_url": "http://www.spitzer.caltech.edu/mission/profile/50-Robert-Hurt",
+          "new_url": "https://www.spitzer.caltech.edu/author/50",
+          "mapping_type": "verified_same_resource",
+          "evidence": "Same official author profile, with matching profile number and Robert Hurt biography."
+        },
+        {
+          "page": 3,
+          "annotation_xref": 45,
+          "old_url": "http://www.spitzer.caltech.edu/mission/profile/50-Robert-Hurt",
+          "new_url": "https://www.spitzer.caltech.edu/author/50",
+          "mapping_type": "verified_same_resource",
+          "evidence": "Same official author profile, with matching profile number and Robert Hurt biography."
+        }
+      ],
+      "validation": {
+        "visible_text_unchanged": true,
+        "rendered_pixels_unchanged": true,
+        "all_other_office_members_identical": null
+      }
+    },
+    {
+      "file": "memos/memo-025-r5.pdf",
+      "original_sha256": "bb5b10f6842424bb910f8fee82894662d56226a5acf4f811b7bd7d3f4adf8810",
+      "updated_sha256": "cbdbc9c63a2efeb2a79e50e420a04ea6f6733bbbe19f904ef6c47ba9c6169ce1",
+      "changes": [
+        {
+          "page": 1,
+          "annotation_xref": 16,
+          "old_url": "https://arxiv.org/pdf/1004.2803.pdf_",
+          "new_url": "https://arxiv.org/pdf/1004.2803",
+          "mapping_type": "verified_same_resource",
+          "evidence": "Corrected malformed trailing underscore; paper identifier, title and authors match the citation."
+        },
+        {
+          "page": 1,
+          "annotation_xref": 17,
+          "old_url": "https://arxiv.org/pdf/1004.2803.pdf_",
+          "new_url": "https://arxiv.org/pdf/1004.2803",
+          "mapping_type": "verified_same_resource",
+          "evidence": "Corrected malformed trailing underscore; paper identifier, title and authors match the citation."
+        }
+      ],
+      "validation": {
+        "visible_text_unchanged": true,
+        "rendered_pixels_unchanged": true,
+        "all_other_office_members_identical": null
+      }
+    },
+    {
+      "file": "memos/memo-029-r2.pdf",
+      "original_sha256": "2019f66689e2171444f033c5678d52e8747a4b6662671f667ac5289b87efeccf",
+      "updated_sha256": "66693df58574d48df350587b69970f6b6f91c156a030649b7d12ca7af1cd001f",
+      "changes": [
+        {
+          "page": 4,
+          "annotation_xref": 81,
+          "old_url": "https://github.com/WVURAIL/gr-radio_astro/blob/master/examples/spectrometer_w_cal.grc",
+          "new_url": "https://github.com/WVURAIL/dspira-software/blob/main/applications/spectrometry/calibrated-spectrometer.grc",
+          "mapping_type": "maintained_software_successor",
+          "evidence": "Memo029 page4 cites the calibrated spectrometer generally. Maintained application is in dspira-software at its current path, per consolidation preference. It differs from the historical graph even after normalizing newlines (64 rather than63 blocks), so current GNU Radio requirements apply. Original pinned source retained only as provenance."
+        }
+      ],
+      "validation": {
+        "visible_text_unchanged": true,
+        "rendered_pixels_unchanged": true,
+        "all_other_office_members_identical": null
+      }
+    },
+    {
+      "file": "memos/memo-032-r5.pdf",
+      "original_sha256": "36bab450fec782062c8f6b6abdcfe2ac65a939166e2539ae67921dad6b6eb0e8",
+      "updated_sha256": "8bcb60e2a51d0e4cf036b0a2d0b779d1c7329185e99e7c9023c6130ce240677e",
+      "changes": [
+        {
+          "page": 4,
+          "annotation_xref": 50,
+          "old_url": "https://github.com/WVURAIL/lightwork/blob/master/memos/LightWorkMemo029-r2-HydrogenLineProject.pdf",
+          "new_url": "https://rail.wvu.edu/lightwork/memos/memo-029-r2.pdf",
+          "mapping_type": "verified_same_resource",
+          "evidence": "Same memo number and revision in current catalog."
+        },
+        {
+          "page": 4,
+          "annotation_xref": 51,
+          "old_url": "https://github.com/WVURAIL/lightwork/blob/master/memos/LightWorkMemo029-r2-HydrogenLineProject.pdf",
+          "new_url": "https://rail.wvu.edu/lightwork/memos/memo-029-r2.pdf",
+          "mapping_type": "verified_same_resource",
+          "evidence": "Same memo number and revision in current catalog."
+        },
+        {
+          "page": 4,
+          "annotation_xref": 52,
+          "old_url": "https://github.com/WVURAIL/lightwork/blob/master/memos/LightWorkMemo014r9.pdf",
+          "new_url": "https://rail.wvu.edu/lightwork/memos/memo-014-r9.pdf",
+          "mapping_type": "verified_same_resource",
+          "evidence": "Same memo number and revision in current catalog."
+        },
+        {
+          "page": 6,
+          "annotation_xref": 77,
+          "old_url": "https://github.com/WVURAIL/lightwork/blob/master/memos/LightWorkMemo028-r7-NoiseTemp.pdf",
+          "new_url": "https://rail.wvu.edu/lightwork/memos/memo-028-r7.pdf",
+          "mapping_type": "verified_same_resource",
+          "evidence": "Same memo number and revision in current catalog."
+        },
+        {
+          "page": 9,
+          "annotation_xref": 116,
+          "old_url": "https://github.com/WVURAIL/lightwork/blob/master/memos/LightWorkMemo021-r6.pdf",
+          "new_url": "https://rail.wvu.edu/lightwork/memos/memo-021-r6.pdf",
+          "mapping_type": "verified_same_resource",
+          "evidence": "Same memo number and revision in current catalog."
+        },
+        {
+          "page": 9,
+          "annotation_xref": 117,
+          "old_url": "https://github.com/WVURAIL/lightwork/blob/master/memos/LightWorkMemo022-r13.pdf",
+          "new_url": "https://rail.wvu.edu/lightwork/memos/history/memo-022-r13.pdf",
+          "mapping_type": "verified_same_resource",
+          "evidence": "Exact cited revision13 retained in history. Current guide is revision14, so preserve the citation to13."
+        }
+      ],
+      "validation": {
+        "visible_text_unchanged": true,
+        "rendered_pixels_unchanged": true,
+        "all_other_office_members_identical": null
+      }
+    },
+    {
+      "file": "memos/memo-034-r5.pdf",
+      "original_sha256": "0777ca5edf3e8d1b76d9b8211af215a0b4a2decd6a7b9f1e18c408bf01240936",
+      "updated_sha256": "b35c65fe6a5198d259ecdfe56304502701cc4b01a05e7ebb60d412150e6a5ed4",
+      "changes": [
+        {
+          "page": 4,
+          "annotation_xref": 68,
+          "old_url": "https://github.com/WVURAIL/lightwork/blob/master/LightWorkMemo32-PailOfMilkyWay-r5.pdf",
+          "new_url": "https://rail.wvu.edu/lightwork/memos/memo-032-r5.pdf",
+          "mapping_type": "verified_same_resource",
+          "evidence": "Same memo number and revision in current catalog."
+        },
+        {
+          "page": 6,
+          "annotation_xref": 86,
+          "old_url": "https://www.cv.nrao.edu/course/astr534/Introradastro.html",
+          "new_url": "https://www.cv.nrao.edu/~sransom/web/Ch1.html",
+          "mapping_type": "official_updated_edition",
+          "evidence": "NRAO Essential Radio Astronomy landing page https://science.nrao.edu/opportunities/courses/era explicitly replaces its obsolete course and links Chapter1 Introduction here. Same authors/title/course but a revised textbook, not an exact old-page copy."
+        },
+        {
+          "page": 6,
+          "annotation_xref": 87,
+          "old_url": "https://www.cv.nrao.edu/course/astr534/Introradastro.html",
+          "new_url": "https://www.cv.nrao.edu/~sransom/web/Ch1.html",
+          "mapping_type": "official_updated_edition",
+          "evidence": "NRAO Essential Radio Astronomy landing page https://science.nrao.edu/opportunities/courses/era explicitly replaces its obsolete course and links Chapter1 Introduction here. Same authors/title/course but a revised textbook, not an exact old-page copy."
+        },
+        {
+          "page": 6,
+          "annotation_xref": 88,
+          "old_url": "http://1https://www.thegreatcourses.com/courses/radio-astronomy-observing-the-invisible-universe.html",
+          "new_url": "https://shop.thegreatcourses.com/radio-astronomy-observing-the-invisible-universe",
+          "mapping_type": "verified_same_resource",
+          "evidence": "Same publisher Radio Astronomy: Observing the Invisible Universe course by Felix Lockman (course1878); malformed scheme prefix removed and current publisher path verified."
+        }
+      ],
+      "validation": {
+        "visible_text_unchanged": true,
+        "rendered_pixels_unchanged": true,
+        "all_other_office_members_identical": null
+      }
+    }
+  ]
+}
