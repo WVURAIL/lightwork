@@ -1,0 +1,55 @@
+name: Publish memos to Pages
+'on':
+  push:
+    branches:
+    - main
+  pull_request: null
+  workflow_dispatch: null
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    name: Validate memos
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      with:
+        persist-credentials: false
+    - name: Check the memo index and download preservation
+      run: |
+        python3 scripts/build_memo_index.py --check
+        python3 -m unittest discover -s tests
+    - uses: ruby/setup-ruby@14594264cd68ce8a2345dd349bc3d138a4ef85c8 # v1
+      with:
+        ruby-version: '3.3'
+        bundler-cache: true
+    - name: Build with locked dependencies
+      run: |
+        bundle exec jekyll build --trace --baseurl /lightwork
+      env:
+        JEKYLL_ENV: production
+    - name: Preserve downloads and check the published files
+      run: |
+        python3 scripts/publish_assets.py --site _site
+        python3 scripts/check_site.py --site _site --baseurl '/lightwork'
+    - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+      with:
+        path: ./_site
+      if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+    - id: deployment
+      uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

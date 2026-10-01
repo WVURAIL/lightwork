@@ -3,7 +3,7 @@ from pathlib import Path
 import subprocess
 import unittest
 
-SCRIPT = Path(__file__).resolve().parents[1] / "bin" / "routerip"
+SCRIPT = Path(__file__).resolve().parents[1] / "reference" / "computers" / "scripts" / "router-address.sh"
 
 class RouterLookupTests(unittest.TestCase):
     def lookup(self, route):

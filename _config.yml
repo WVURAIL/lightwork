@@ -1,1 +1,32 @@
-theme: jekyll-theme-minimal
+# The publishing workflow supplies the GitHub Pages base path.
+title: LightWork Memo Series
+tagline: Citizen science with radio telescopes
+description: >-
+  An informal series of numbered memoranda on the design, construction and
+  operation of radio telescopes for citizen science.
+author: WVU Radio Astronomy Instrumentation Laboratory
+url: "https://rail.wvu.edu"
+date_format: "%B %-d, %Y"
+github_username: WVURAIL
+markdown: kramdown
+kramdown:
+  input: GFM
+sass:
+  style: compressed
+
+# Editable originals stay in Git; publish_assets.py preserves older downloads.
+exclude:
+  - scripts/
+  - tests/
+  - sources/
+  - reference/
+  - docs/
+  - LICENSE
+  - README.md
+  - CONTRIBUTING.md
+  - "**/README.md"
+  - "*.pages"
+  - "*.docx"
+  - Gemfile
+  - Gemfile.lock
+  - vendor
